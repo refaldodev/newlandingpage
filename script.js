@@ -1,0 +1,260 @@
+// Set aspect ratio of box
+var aspect_ratio = 1;
+// Store the jQuery object for future reference
+var $box = jQuery(".figure-gigs");
+var $box2 = jQuery(".figure-creator");
+var $box3 = jQuery(".figure-video");
+
+// Initial resize of .box
+jQuery(document).ready(function ($) {
+  $box.height($box.width() * aspect_ratio);
+  $box2.height($box2.width() * aspect_ratio);
+  $box3.height($box3.width() * aspect_ratio);
+});
+// Resize .box on browser resize
+jQuery(window).resize(function () {
+  $box.height($box.width() * aspect_ratio);
+  $box2.height($box2.width() * aspect_ratio);
+  $box3.height($box3.width() * aspect_ratio);
+});
+
+// navbar add efek shadow
+const nav = document.querySelector("nav");
+window.addEventListener("scroll", fixNav);
+
+function fixNav() {
+  if (window.scrollY > nav.offsetHeight) {
+    nav.classList.add("nav-outline");
+  } else {
+    nav.classList.remove("nav-outline");
+  }
+}
+// card jquery event click to location
+$(".card-hero").on("click", function (e) {
+  var tujuan = $(this).attr("href");
+  console.log(tujuan);
+  var elemenTujuan = $(tujuan);
+  $("html,body").animate({
+    scrollTop: elemenTujuan.offset().top - 55,
+  });
+  e.preventDefault();
+});
+
+// to top navbar animate
+$(".logoNav").on("click", function (e) {
+  $("html,body").animate({
+    scrollTop: $(this).scrollTop(),
+  });
+  e.preventDefault();
+});
+
+// carousel
+$(".carousel1").carousel({
+  interval: 1000,
+  pause: false,
+});
+$(".carousel2").carousel({
+  interval: 1200,
+  pause: false,
+});
+$(".carousel3").carousel({
+  pause: false,
+});
+
+$(".carousel3").on("slide.bs.carousel", function (e) {
+  var id = e.relatedTarget.id;
+  // console.log(e.to);
+  switch (id) {
+    case "1":
+      if ($(".videoCarousel2").prop("muted", true))
+        if ($(".videoCarousel3").prop("muted", true))
+          if ($(".videoCarousel4").prop("muted", true))
+            if ($(".videoCarousel3").prop("muted", true)) break;
+
+    case "2":
+      if ($(".videoCarousel1").prop("muted", true))
+        if ($(".videoCarousel4").prop("muted", true))
+          if ($(".videoCarousel3").prop("muted", true)) break;
+    case "3":
+      if ($(".videoCarousel2").prop("muted", true))
+        if ($(".videoCarousel1").prop("muted", true))
+          if ($(".videoCarousel4").prop("muted", true)) break;
+    case "4":
+      if ($(".videoCarousel2").prop("muted", true))
+        if ($(".videoCarousel3").prop("muted", true))
+          if ($(".videoCarousel1").prop("muted", true)) break;
+    default:
+  }
+});
+$(".carousel-btn").click(function () {
+  // var vid = document.querySelectorAll("videoCarousel");
+  $(".figure-video").each(function (i, obj) {
+    obj.currentTime = 0;
+    obj.play();
+  });
+});
+
+// $(".carouselVideo").each(function (i, e) {
+//   console.log(e);
+// });
+// // Entering fullscreen mode
+// $("video").bind(
+//   "webkitfullscreenchange mozfullscreenchange fullscreenchange",
+//   function (e) {
+//     var state =
+//       document.fullScreen ||
+//       document.mozFullScreen ||
+//       document.webkitIsFullScreen;
+//     var event = state ? "FullscreenOn" : "FullscreenOff";
+
+//     if (event == "FullscreenOn") {
+//       // $(".carouselVideo").each(function (i, obj) {
+//       //   console.log(obj);
+
+//       // });
+//       $(".carousel3").carousel({
+//         pause: false,
+//         interval: false,
+//       });
+
+//       $(".videoCarousel").css("border-radius", "26px");
+//     }
+//     if (event == "FullscreenOff") {
+//       // $(this).css("objectFit", "");
+//       // $("#carouselExampleControls").addClass(
+//       //   "carousel carousel3 h-100 slide carousel-fade"
+//       // );
+//       $(".figure-video").css("border-radius", "26px");
+//     }
+//   }
+// );
+$(".carousel-influencer").flickity({
+  // options
+  cellAlign: "left",
+  contain: true,
+  adaptiveHeight: true,
+  autoPlay: 1500,
+  autoPlayInterval: 1,
+  prevNextButtons: false,
+  pageDots: false,
+  imagesLoaded: true,
+  wrapAround: true, //
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  var flkty = new Flickity(".carousel-influencer", {
+    cellAlign: "left",
+    contain: true,
+    adaptiveHeight: true,
+    autoPlay: 1500,
+    // autoPlayInterval: 1,
+    pauseAutoPlayOnHover: false,
+    prevNextButtons: false,
+    pageDots: false,
+    // imagesLoaded: true,
+    wrapAround: true, //
+    draggable: true,
+  });
+
+  // Tangkap peristiwa ketika slider mencapai slide terakhir
+  flkty.on("select", function () {
+    if (flkty.selectedIndex == flkty.slides.length - 1) {
+      // Jika slider berada di slide terakhir
+      setTimeout(function () {
+        flkty.select(0); // Kembalikan slider ke slide pertama setelah beberapa saat
+      }, 2000); // Ubah nilai ini sesuai kebutuhan Anda (1000 = 1 detik)
+    }
+  });
+  // Event listener untuk mengaktifkan autoplay kembali saat slider di-drag
+  flkty.on("dragStart", function () {
+    flkty.playPlayer(); // Mengaktifkan autoplay kembali saat slider di-drag
+  });
+});
+
+// 2
+$(".carousel-influencer2").flickity({
+  // options
+  cellAlign: "left",
+  contain: true,
+  adaptiveHeight: true,
+  autoPlay: 1800,
+  autoPlayInterval: 1,
+  prevNextButtons: false,
+  pageDots: false,
+  imagesLoaded: true,
+  wrapAround: true, //
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  var flkty = new Flickity(".carousel-influencer2", {
+    cellAlign: "left",
+    contain: true,
+    adaptiveHeight: true,
+    autoPlay: 1800,
+    // autoPlayInterval: 1,
+    pauseAutoPlayOnHover: false,
+    prevNextButtons: false,
+    pageDots: false,
+    // imagesLoaded: true,
+    wrapAround: true, //
+    draggable: true,
+  });
+
+  // Tangkap peristiwa ketika slider mencapai slide terakhir
+  flkty.on("select", function () {
+    if (flkty.selectedIndex == flkty.slides.length - 1) {
+      // Jika slider berada di slide terakhir
+      setTimeout(function () {
+        flkty.select(0); // Kembalikan slider ke slide pertama setelah beberapa saat
+      }, 2000); // Ubah nilai ini sesuai kebutuhan Anda (1000 = 1 detik)
+    }
+  });
+  // Event listener untuk mengaktifkan autoplay kembali saat slider di-drag
+  flkty.on("dragStart", function () {
+    flkty.playPlayer(); // Mengaktifkan autoplay kembali saat slider di-drag
+  });
+});
+
+// 3
+$(".carousel-influencer3").flickity({
+  // options
+  cellAlign: "left",
+  contain: true,
+  adaptiveHeight: true,
+  autoPlay: 1400,
+  autoPlayInterval: 1,
+  prevNextButtons: false,
+  pageDots: false,
+  imagesLoaded: true,
+  wrapAround: true, //
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  var flkty = new Flickity(".carousel-influencer3", {
+    cellAlign: "left",
+    contain: true,
+    adaptiveHeight: true,
+    autoPlay: 1400,
+    // autoPlayInterval: 1,
+    pauseAutoPlayOnHover: false,
+    prevNextButtons: false,
+    pageDots: false,
+    // imagesLoaded: true,
+    wrapAround: true, //
+    draggable: true,
+  });
+
+  // Tangkap peristiwa ketika slider mencapai slide terakhir
+  flkty.on("select", function () {
+    if (flkty.selectedIndex == flkty.slides.length - 1) {
+      // Jika slider berada di slide terakhir
+      setTimeout(function () {
+        flkty.select(0); // Kembalikan slider ke slide pertama setelah beberapa saat
+      }, 1400); // Ubah nilai ini sesuai kebutuhan Anda (1000 = 1 detik)
+    }
+  });
+  // Event listener untuk mengaktifkan autoplay kembali saat slider di-drag
+  flkty.on("dragStart", function () {
+    flkty.playPlayer(); // Mengaktifkan autoplay kembali saat slider di-drag
+  });
+});
