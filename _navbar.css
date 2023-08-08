@@ -61,6 +61,7 @@ nav .nav-link {
 }
 
 .header-pro-logo {
+  cursor: pointer;
   height: 39px;
   width: 39px;
   object-fit: contain;
@@ -249,6 +250,10 @@ nav .nav-link {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+  cursor: pointer;
+}
+.pointer {
+  cursor: pointer;
 }
 
 .lang-container {

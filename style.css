@@ -19,6 +19,10 @@ html {
   padding-top: 60px;
 } */
 /* utilities */
+.mw-300 {
+  max-width: 300px;
+  word-break: break-all;
+}
 .sing-upBtn {
   word-break: break-word;
 }
