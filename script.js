@@ -128,6 +128,8 @@ $(".carousel-btn").click(function () {
 //     }
 //   }
 // );
+
+/* 
 $(".carousel-influencer").flickity({
   // options
   cellAlign: "left",
@@ -257,4 +259,232 @@ document.addEventListener("DOMContentLoaded", function () {
   flkty.on("dragStart", function () {
     flkty.playPlayer(); // Mengaktifkan autoplay kembali saat slider di-drag
   });
-});
+}); */
+
+function carousel1() {
+  let tickerSpeed = 0.8;
+
+  let flickity = null;
+  let isPaused = false;
+  const slideshowEl = document.querySelector(".carousel-influencer1");
+
+  //
+  //   Functions
+  //
+  //////////////////////////////////////////////////////////////////////
+
+  const update = () => {
+    if (isPaused) return;
+    if (flickity.slides) {
+      flickity.x = (flickity.x - tickerSpeed) % flickity.slideableWidth;
+      flickity.selectedIndex = flickity.dragEndRestingSelect();
+      flickity.updateSelectedSlide();
+      flickity.settle(flickity.x);
+    }
+    window.requestAnimationFrame(update);
+  };
+
+  const pause = () => {
+    isPaused = true;
+  };
+
+  const play = () => {
+    if (isPaused) {
+      isPaused = false;
+      window.requestAnimationFrame(update);
+    }
+  };
+
+  //
+  //   Create Flickity
+  //
+  //////////////////////////////////////////////////////////////////////
+
+  flickity = new Flickity(slideshowEl, {
+    autoPlay: false,
+    prevNextButtons: true,
+    pageDots: false,
+    draggable: true,
+    wrapAround: true,
+    selectedAttraction: 0.015,
+    friction: 0.25,
+    prevNextButtons: false,
+    pageDots: false,
+    imagesLoaded: true,
+  });
+  flickity.x = 0;
+
+  //
+  //   Add Event Listeners
+  //
+  //////////////////////////////////////////////////////////////////////
+
+  slideshowEl.addEventListener("mouseenter", play, false);
+  slideshowEl.addEventListener("focusin", play, false);
+  slideshowEl.addEventListener("mouseleave", play, false);
+  slideshowEl.addEventListener("focusout", play, false);
+
+  flickity.on("dragStart", () => {
+    isPaused = true;
+  });
+
+  //
+  //   Start Ticker
+  //
+  //////////////////////////////////////////////////////////////////////
+
+  update();
+}
+carousel1();
+
+function carousel2() {
+  let tickerSpeed = 0.4;
+
+  let flickity = null;
+  let isPaused = false;
+  const slideshowEl = document.querySelector(".carousel-influencer2");
+
+  //
+  //   Functions
+  //
+  //////////////////////////////////////////////////////////////////////
+
+  const update = () => {
+    if (isPaused) return;
+    if (flickity.slides) {
+      flickity.x = (flickity.x - tickerSpeed) % flickity.slideableWidth;
+      flickity.selectedIndex = flickity.dragEndRestingSelect();
+      flickity.updateSelectedSlide();
+      flickity.settle(flickity.x);
+    }
+    window.requestAnimationFrame(update);
+  };
+
+  const pause = () => {
+    isPaused = true;
+  };
+
+  const play = () => {
+    if (isPaused) {
+      isPaused = false;
+      window.requestAnimationFrame(update);
+    }
+  };
+
+  //
+  //   Create Flickity
+  //
+  //////////////////////////////////////////////////////////////////////
+
+  flickity = new Flickity(slideshowEl, {
+    autoPlay: false,
+    prevNextButtons: true,
+    pageDots: false,
+    draggable: true,
+    wrapAround: true,
+    selectedAttraction: 0.015,
+    friction: 0.25,
+    prevNextButtons: false,
+    pageDots: false,
+    imagesLoaded: true,
+  });
+  flickity.x = 0;
+
+  //
+  //   Add Event Listeners
+  //
+  //////////////////////////////////////////////////////////////////////
+
+  slideshowEl.addEventListener("mouseenter", play, false);
+  slideshowEl.addEventListener("focusin", play, false);
+  slideshowEl.addEventListener("mouseleave", play, false);
+  slideshowEl.addEventListener("focusout", play, false);
+
+  flickity.on("dragStart", () => {
+    isPaused = true;
+  });
+
+  //
+  //   Start Ticker
+  //
+  //////////////////////////////////////////////////////////////////////
+
+  update();
+}
+carousel2();
+
+function carousel3() {
+  let tickerSpeed = 0.5;
+
+  let flickity = null;
+  let isPaused = false;
+  const slideshowEl = document.querySelector(".carousel-influencer3");
+
+  //
+  //   Functions
+  //
+  //////////////////////////////////////////////////////////////////////
+
+  const update = () => {
+    if (isPaused) return;
+    if (flickity.slides) {
+      flickity.x = (flickity.x - tickerSpeed) % flickity.slideableWidth;
+      flickity.selectedIndex = flickity.dragEndRestingSelect();
+      flickity.updateSelectedSlide();
+      flickity.settle(flickity.x);
+    }
+    window.requestAnimationFrame(update);
+  };
+
+  const pause = () => {
+    isPaused = true;
+  };
+
+  const play = () => {
+    if (isPaused) {
+      isPaused = false;
+      window.requestAnimationFrame(update);
+    }
+  };
+
+  //
+  //   Create Flickity
+  //
+  //////////////////////////////////////////////////////////////////////
+
+  flickity = new Flickity(slideshowEl, {
+    autoPlay: false,
+    prevNextButtons: true,
+    pageDots: false,
+    draggable: true,
+    wrapAround: true,
+    selectedAttraction: 0.015,
+    friction: 0.25,
+    prevNextButtons: false,
+    pageDots: false,
+    imagesLoaded: true,
+  });
+  flickity.x = 0;
+
+  //
+  //   Add Event Listeners
+  //
+  //////////////////////////////////////////////////////////////////////
+
+  slideshowEl.addEventListener("mouseenter", play, false);
+  slideshowEl.addEventListener("focusin", play, false);
+  slideshowEl.addEventListener("mouseleave", play, false);
+  slideshowEl.addEventListener("focusout", play, false);
+
+  flickity.on("dragStart", () => {
+    isPaused = true;
+  });
+
+  //
+  //   Start Ticker
+  //
+  //////////////////////////////////////////////////////////////////////
+
+  update();
+}
+carousel3();

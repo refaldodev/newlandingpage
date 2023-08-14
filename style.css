@@ -1497,7 +1497,30 @@ footer .text-footer a {
     height: auto !important;
   } */
 }
-
+@media (min-width: 769px) and (max-width: 1199px) {
+  .home__features-blur {
+    /*bottom: 90px;
+    */
+    object-fit: cover;
+    object-position: center;
+    color: transparent;
+    width: 100%;
+    height: auto;
+    filter: blur(20px);
+    z-index: -20;
+    -webkit-filter: blur(20px);
+  }
+  .circle-color {
+    position: absolute;
+    /* inset: 0; */
+    bottom: 220px !important;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    z-index: -20;
+  }
+}
 @media (min-width: 1200px) and (max-width: 1280px) {
   /* .jumbotron {
     padding: 40px 0 90px 0 !important;
@@ -1744,6 +1767,18 @@ footer .text-footer a {
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
+  transition: transform 0.2s;
+  -webkit-transition: transform 0.2s;
+  -moz-transition: transform 0.2s;
+  -ms-transition: transform 0.2s;
+  -o-transition: transform 0.2s;
+}
+.carousel-cell .img-influencer:hover {
+  -webkit-transform: scale(0.95);
+  -moz-transform: scale(0.95);
+  -ms-transform: scale(0.95);
+  -o-transform: scale(0.95);
+  transform: scale(0.95);
 }
 .carousel-cell .flag {
   position: absolute;
