@@ -381,6 +381,8 @@ function carousel2() {
 
   let flickity = null;
   let isPaused = false;
+  let isTouching = false; // Menyimpan status sentuhan
+
   const slideshowEl = document.querySelector(".carousel-influencer2");
 
   //
@@ -494,6 +496,8 @@ function carousel3() {
 
   let flickity = null;
   let isPaused = false;
+  let isTouching = false; // Menyimpan status sentuhan
+
   const slideshowEl = document.querySelector(".carousel-influencer3");
 
   //
