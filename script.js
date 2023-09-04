@@ -283,10 +283,10 @@ function carousel1() {
     }
     window.requestAnimationFrame(update);
   };
-
+  /* 
   const pause = () => {
     isPaused = true;
-  };
+  }; */
 
   const play = () => {
     if (isPaused) {
@@ -359,10 +359,10 @@ function carousel2() {
     }
     window.requestAnimationFrame(update);
   };
-
+  /* 
   const pause = () => {
     isPaused = true;
-  };
+  }; */
 
   const play = () => {
     if (isPaused) {
@@ -435,10 +435,10 @@ function carousel3() {
     }
     window.requestAnimationFrame(update);
   };
-
+  /* 
   const pause = () => {
     isPaused = true;
-  };
+  }; */
 
   const play = () => {
     if (isPaused) {
