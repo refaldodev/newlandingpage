@@ -267,6 +267,7 @@ function carousel1() {
   let flickity = null;
   let isPaused = false;
   let isTouching = false; // Menyimpan status sentuhan
+  let isScrolling = false;
 
   const slideshowEl = document.querySelector(".carousel-influencer1");
 
@@ -382,6 +383,7 @@ function carousel2() {
   let flickity = null;
   let isPaused = false;
   let isTouching = false; // Menyimpan status sentuhan
+  let isScrolling = false;
 
   const slideshowEl = document.querySelector(".carousel-influencer2");
 
@@ -497,6 +499,7 @@ function carousel3() {
   let flickity = null;
   let isPaused = false;
   let isTouching = false; // Menyimpan status sentuhan
+  let isScrolling = false;
 
   const slideshowEl = document.querySelector(".carousel-influencer3");
 
