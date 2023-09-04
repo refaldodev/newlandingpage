@@ -324,6 +324,21 @@ function carousel1() {
   slideshowEl.addEventListener("mouseleave", play, false);
   slideshowEl.addEventListener("focusout", play, false);
 
+  slideshowEl.addEventListener("scroll", function () {
+    if (!isScrolling) {
+      isScrolling = true;
+      // Hentikan autoplay saat pengguna mulai menggulir
+      flickity.stopPlayer();
+    }
+
+    clearTimeout(scrollTimeout);
+    var scrollTimeout = setTimeout(function () {
+      isScrolling = false;
+      // Lanjutkan autoplay saat pengguna selesai menggulir
+      play();
+    }, 800); // Anda dapat menyesuaikan nilai timeout sesuai kebutuhan.
+  });
+
   flickity.on("dragStart", () => {
     isPaused = true;
   });
@@ -400,6 +415,21 @@ function carousel2() {
   slideshowEl.addEventListener("mouseleave", play, false);
   slideshowEl.addEventListener("focusout", play, false);
 
+  slideshowEl.addEventListener("scroll", function () {
+    if (!isScrolling) {
+      isScrolling = true;
+      // Hentikan autoplay saat pengguna mulai menggulir
+      flickity.stopPlayer();
+    }
+
+    clearTimeout(scrollTimeout);
+    var scrollTimeout = setTimeout(function () {
+      isScrolling = false;
+      // Lanjutkan autoplay saat pengguna selesai menggulir
+      play();
+    }, 800); // Anda dapat menyesuaikan nilai timeout sesuai kebutuhan.
+  });
+
   flickity.on("dragStart", () => {
     isPaused = true;
   });
@@ -475,6 +505,20 @@ function carousel3() {
   slideshowEl.addEventListener("focusin", play, false);
   slideshowEl.addEventListener("mouseleave", play, false);
   slideshowEl.addEventListener("focusout", play, false);
+  slideshowEl.addEventListener("scroll", function () {
+    if (!isScrolling) {
+      isScrolling = true;
+      // Hentikan autoplay saat pengguna mulai menggulir
+      flickity.stopPlayer();
+    }
+
+    clearTimeout(scrollTimeout);
+    var scrollTimeout = setTimeout(function () {
+      isScrolling = false;
+      // Lanjutkan autoplay saat pengguna selesai menggulir
+      play();
+    }, 800); // Anda dapat menyesuaikan nilai timeout sesuai kebutuhan.
+  });
 
   flickity.on("dragStart", () => {
     isPaused = true;
