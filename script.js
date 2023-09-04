@@ -266,6 +266,8 @@ function carousel1() {
 
   let flickity = null;
   let isPaused = false;
+  let isTouching = false; // Menyimpan status sentuhan
+
   const slideshowEl = document.querySelector(".carousel-influencer1");
 
   //
@@ -323,7 +325,29 @@ function carousel1() {
   slideshowEl.addEventListener("focusin", play, false);
   slideshowEl.addEventListener("mouseleave", play, false);
   slideshowEl.addEventListener("focusout", play, false);
+  // Tambahkan event listener untuk menyentuh (touch) pada elemen carousel
+  slideshowEl.addEventListener("touchstart", () => {
+    isTouching = true;
+    // Hentikan autoplay saat pengguna mulai menyentuh
+    flickity.stopPlayer();
+  });
 
+  slideshowEl.addEventListener("touchend", () => {
+    isTouching = false;
+    // Lanjutkan autoplay saat pengguna selesai menyentuh
+    play();
+  });
+
+  // ...
+
+  // Update autoplay jika tidak ada scrolling atau sentuhan
+  const updateAutoplay = () => {
+    if (!isScrolling && !isTouching && isPaused) {
+      isPaused = false;
+      window.requestAnimationFrame(update);
+    }
+  };
+  // Add event listeners for scroll and touch
   slideshowEl.addEventListener("scroll", function () {
     if (!isScrolling) {
       isScrolling = true;
@@ -335,8 +359,8 @@ function carousel1() {
     var scrollTimeout = setTimeout(function () {
       isScrolling = false;
       // Lanjutkan autoplay saat pengguna selesai menggulir
-      play();
-    }, 800); // Anda dapat menyesuaikan nilai timeout sesuai kebutuhan.
+      updateAutoplay();
+    }, 250); // Sesuaikan timeout sesuai kebutuhan.
   });
 
   flickity.on("dragStart", () => {
@@ -414,7 +438,29 @@ function carousel2() {
   slideshowEl.addEventListener("focusin", play, false);
   slideshowEl.addEventListener("mouseleave", play, false);
   slideshowEl.addEventListener("focusout", play, false);
+  // Tambahkan event listener untuk menyentuh (touch) pada elemen carousel
+  slideshowEl.addEventListener("touchstart", () => {
+    isTouching = true;
+    // Hentikan autoplay saat pengguna mulai menyentuh
+    flickity.stopPlayer();
+  });
 
+  slideshowEl.addEventListener("touchend", () => {
+    isTouching = false;
+    // Lanjutkan autoplay saat pengguna selesai menyentuh
+    play();
+  });
+
+  // ...
+
+  // Update autoplay jika tidak ada scrolling atau sentuhan
+  const updateAutoplay = () => {
+    if (!isScrolling && !isTouching && isPaused) {
+      isPaused = false;
+      window.requestAnimationFrame(update);
+    }
+  };
+  // Add event listeners for scroll and touch
   slideshowEl.addEventListener("scroll", function () {
     if (!isScrolling) {
       isScrolling = true;
@@ -426,8 +472,8 @@ function carousel2() {
     var scrollTimeout = setTimeout(function () {
       isScrolling = false;
       // Lanjutkan autoplay saat pengguna selesai menggulir
-      play();
-    }, 800); // Anda dapat menyesuaikan nilai timeout sesuai kebutuhan.
+      updateAutoplay();
+    }, 250); // Sesuaikan timeout sesuai kebutuhan.
   });
 
   flickity.on("dragStart", () => {
@@ -505,6 +551,29 @@ function carousel3() {
   slideshowEl.addEventListener("focusin", play, false);
   slideshowEl.addEventListener("mouseleave", play, false);
   slideshowEl.addEventListener("focusout", play, false);
+  // Tambahkan event listener untuk menyentuh (touch) pada elemen carousel
+  slideshowEl.addEventListener("touchstart", () => {
+    isTouching = true;
+    // Hentikan autoplay saat pengguna mulai menyentuh
+    flickity.stopPlayer();
+  });
+
+  slideshowEl.addEventListener("touchend", () => {
+    isTouching = false;
+    // Lanjutkan autoplay saat pengguna selesai menyentuh
+    play();
+  });
+
+  // ...
+
+  // Update autoplay jika tidak ada scrolling atau sentuhan
+  const updateAutoplay = () => {
+    if (!isScrolling && !isTouching && isPaused) {
+      isPaused = false;
+      window.requestAnimationFrame(update);
+    }
+  };
+  // Add event listeners for scroll and touch
   slideshowEl.addEventListener("scroll", function () {
     if (!isScrolling) {
       isScrolling = true;
@@ -516,8 +585,8 @@ function carousel3() {
     var scrollTimeout = setTimeout(function () {
       isScrolling = false;
       // Lanjutkan autoplay saat pengguna selesai menggulir
-      play();
-    }, 800); // Anda dapat menyesuaikan nilai timeout sesuai kebutuhan.
+      updateAutoplay();
+    }, 250); // Sesuaikan timeout sesuai kebutuhan.
   });
 
   flickity.on("dragStart", () => {
