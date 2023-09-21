@@ -626,8 +626,9 @@ document.addEventListener("DOMContentLoaded", function () {
 // carousel3();
 
 // new coba
+
 function carousel1() {
-  let tickerSpeed = 0.5;
+  let tickerSpeed = 0.8;
 
   let flickity = null;
   let isPaused = false;
@@ -674,27 +675,29 @@ function carousel1() {
   slideshowEl.addEventListener("mouseleave", play, false);
   slideshowEl.addEventListener("focusout", play, false);
 
-  slideshowEl.addEventListener(
-    "touchstart",
-    (e) => {
-      e.preventDefault();
+  slideshowEl.addEventListener("touchstart", () => {
+    document.addEventListener(
+      "touchmove",
+      function (e) {
+        e.preventDefault();
+        isTouching = true;
+        flickity.stopPlayer();
+      },
+      { passive: false }
+    );
+  });
 
-      isTouching = true;
-      flickity.stopPlayer();
-    },
-    { passive: false }
-  );
-
-  slideshowEl.addEventListener(
-    "touchend",
-    (e) => {
-      e.preventDefault();
-
-      isTouching = false;
-      play();
-    },
-    { passive: false }
-  );
+  slideshowEl.addEventListener("touchend", () => {
+    document.addEventListener(
+      "touchmove",
+      function (e) {
+        e.preventDefault();
+        isTouching = false;
+        play();
+      },
+      { passive: false }
+    );
+  });
 
   const updateAutoplay = () => {
     if (!isScrolling && !isTouching && isPaused) {
@@ -717,7 +720,14 @@ function carousel1() {
   });
 
   flickity.on("dragStart", () => {
-    isPaused = true;
+    document.addEventListener(
+      "touchmove",
+      function (e) {
+        e.preventDefault();
+        isPaused = true;
+      },
+      { passive: false }
+    );
   });
 
   update();
@@ -726,7 +736,7 @@ function carousel1() {
 carousel1();
 
 function carousel2() {
-  let tickerSpeed = 0.5;
+  let tickerSpeed = 0.3;
 
   let flickity = null;
   let isPaused = false;
@@ -773,27 +783,29 @@ function carousel2() {
   slideshowEl.addEventListener("mouseleave", play, false);
   slideshowEl.addEventListener("focusout", play, false);
 
-  slideshowEl.addEventListener(
-    "touchstart",
-    (e) => {
-      e.preventDefault();
+  slideshowEl.addEventListener("touchstart", () => {
+    document.addEventListener(
+      "touchmove",
+      function (e) {
+        e.preventDefault();
+        isTouching = true;
+        flickity.stopPlayer();
+      },
+      { passive: false }
+    );
+  });
 
-      isTouching = true;
-      flickity.stopPlayer();
-    },
-    { passive: false }
-  );
-
-  slideshowEl.addEventListener(
-    "touchend",
-    (e) => {
-      e.preventDefault();
-
-      isTouching = false;
-      play();
-    },
-    { passive: false }
-  );
+  slideshowEl.addEventListener("touchend", () => {
+    document.addEventListener(
+      "touchmove",
+      function (e) {
+        e.preventDefault();
+        isTouching = false;
+        play();
+      },
+      { passive: false }
+    );
+  });
 
   const updateAutoplay = () => {
     if (!isScrolling && !isTouching && isPaused) {
@@ -816,7 +828,14 @@ function carousel2() {
   });
 
   flickity.on("dragStart", () => {
-    isPaused = true;
+    document.addEventListener(
+      "touchmove",
+      function (e) {
+        e.preventDefault();
+        isPaused = true;
+      },
+      { passive: false }
+    );
   });
 
   update();
@@ -872,27 +891,29 @@ function carousel3() {
   slideshowEl.addEventListener("mouseleave", play, false);
   slideshowEl.addEventListener("focusout", play, false);
 
-  slideshowEl.addEventListener(
-    "touchstart",
-    (e) => {
-      e.preventDefault();
+  slideshowEl.addEventListener("touchstart", () => {
+    document.addEventListener(
+      "touchmove",
+      function (e) {
+        e.preventDefault();
+        isTouching = true;
+        flickity.stopPlayer();
+      },
+      { passive: false }
+    );
+  });
 
-      isTouching = true;
-      flickity.stopPlayer();
-    },
-    { passive: false }
-  );
-
-  slideshowEl.addEventListener(
-    "touchend",
-    (e) => {
-      e.preventDefault();
-
-      isTouching = false;
-      play();
-    },
-    { passive: false }
-  );
+  slideshowEl.addEventListener("touchend", () => {
+    document.addEventListener(
+      "touchmove",
+      function (e) {
+        e.preventDefault();
+        isTouching = false;
+        play();
+      },
+      { passive: false }
+    );
+  });
 
   const updateAutoplay = () => {
     if (!isScrolling && !isTouching && isPaused) {
@@ -915,7 +936,14 @@ function carousel3() {
   });
 
   flickity.on("dragStart", () => {
-    isPaused = true;
+    document.addEventListener(
+      "touchmove",
+      function (e) {
+        e.preventDefault();
+        isPaused = true;
+      },
+      { passive: false }
+    );
   });
 
   update();
