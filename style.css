@@ -334,7 +334,7 @@ nav.dropdown-toggle .menu {
 }
 .text-featuresImg {
   color: #000;
-  font-weight: 800;
+  font-weight: 700;
   font-size: 1.4rem !important;
   line-height: 160%;
   margin-bottom: 25px;
@@ -1144,7 +1144,7 @@ footer .text-footer a {
   }
   .text-featuresImg {
     color: #000;
-    font-weight: 800;
+    font-weight: 700;
     font-size: 18px !important;
     line-height: 160%;
     margin-bottom: 25px;
@@ -1772,22 +1772,24 @@ footer .text-footer a {
   -moz-transition: transform 0.2s;
   -ms-transition: transform 0.2s;
   -o-transition: transform 0.2s;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
 }
-.carousel-cell .img-influencer:hover {
+/* .carousel-cell .img-influencer:hover {
   -webkit-transform: scale(0.95);
   -moz-transform: scale(0.95);
   -ms-transform: scale(0.95);
   -o-transform: scale(0.95);
   transform: scale(0.95);
-}
+} */
 .carousel-cell .flag {
   position: absolute;
   width: 35px;
-  height: 35px;
+  height: Auto;
   margin-right: 16px;
   left: -7px;
-  bottom: 7px;
-  border-radius: 5px;
+  bottom: 13px;
+  /*   border-radius: 5px; */
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
 }
 .jumbotron.delete-pb {
   padding-bottom: 0px !important;

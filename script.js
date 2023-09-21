@@ -41,11 +41,27 @@ $(".card-hero").on("click", function (e) {
 });
 
 // to top navbar animate
-$(".logoNav").on("click", function (e) {
+/* $(".logoNav").on("click", function (e) {
   $("html,body").animate({
     scrollTop: $(this).scrollTop(),
   });
   e.preventDefault();
+});
+ */
+$(".logoNav").on("click", function (e) {
+  e.preventDefault();
+
+  // Ganti "#target" dengan selector yang sesuai dengan elemen yang ingin Anda gulir
+  var targetElement = $("body");
+
+  if (targetElement.length) {
+    $("html, body").animate(
+      {
+        scrollTop: targetElement.offset().top,
+      },
+      10
+    ); // Ubah 1000 menjadi durasi animasi yang Anda inginkan (dalam milidetik)
+  }
 });
 
 // carousel
