@@ -701,7 +701,7 @@ function carousel1() {
     scrollTimeout = setTimeout(function () {
       isScrolling = false;
       updateAutoplay();
-    }, 800); // Sesuaikan timeout sesuai kebutuhan.
+    }, 0); // Sesuaikan timeout sesuai kebutuhan.
   });
 
   flickity.on("dragStart", () => {
@@ -788,7 +788,7 @@ function carousel2() {
     scrollTimeout = setTimeout(function () {
       isScrolling = false;
       updateAutoplay();
-    }, 400); // Sesuaikan timeout sesuai kebutuhan.
+    }, 0); // Sesuaikan timeout sesuai kebutuhan.
   });
 
   flickity.on("dragStart", () => {
@@ -875,7 +875,7 @@ function carousel3() {
     scrollTimeout = setTimeout(function () {
       isScrolling = false;
       updateAutoplay();
-    }, 500); // Sesuaikan timeout sesuai kebutuhan.
+    }, 0); // Sesuaikan timeout sesuai kebutuhan.
   });
 
   flickity.on("dragStart", () => {
