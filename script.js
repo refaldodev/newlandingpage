@@ -627,7 +627,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // new coba
 function carousel1() {
-  let tickerSpeed = 0.5;
+  let tickerSpeed = 0.1;
 
   let flickity = null;
   let isPaused = false;
@@ -722,7 +722,7 @@ function carousel1() {
 carousel1();
 
 function carousel2() {
-  let tickerSpeed = 0.5;
+  let tickerSpeed = 0.1;
 
   let flickity = null;
   let isPaused = false;
@@ -817,7 +817,7 @@ function carousel2() {
 carousel2();
 
 function carousel3() {
-  let tickerSpeed = 0.5;
+  let tickerSpeed = 0.1;
 
   let flickity = null;
   let isPaused = false;
