@@ -627,7 +627,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // new coba
 function carousel1() {
-  let tickerSpeed = 0.3;
+  let tickerSpeed = 0.5;
 
   let flickity = null;
   let isPaused = false;
@@ -674,15 +674,27 @@ function carousel1() {
   slideshowEl.addEventListener("mouseleave", play, false);
   slideshowEl.addEventListener("focusout", play, false);
 
-  slideshowEl.addEventListener("touchstart", () => {
-    isTouching = true;
-    flickity.stopPlayer();
-  });
+  slideshowEl.addEventListener(
+    "touchstart",
+    (e) => {
+      e.preventDefault();
 
-  slideshowEl.addEventListener("touchend", () => {
-    isTouching = false;
-    play();
-  });
+      isTouching = true;
+      flickity.stopPlayer();
+    },
+    { passive: false }
+  );
+
+  slideshowEl.addEventListener(
+    "touchend",
+    (e) => {
+      e.preventDefault();
+
+      isTouching = false;
+      play();
+    },
+    { passive: false }
+  );
 
   const updateAutoplay = () => {
     if (!isScrolling && !isTouching && isPaused) {
@@ -714,7 +726,7 @@ function carousel1() {
 carousel1();
 
 function carousel2() {
-  let tickerSpeed = 0.14;
+  let tickerSpeed = 0.5;
 
   let flickity = null;
   let isPaused = false;
@@ -761,15 +773,27 @@ function carousel2() {
   slideshowEl.addEventListener("mouseleave", play, false);
   slideshowEl.addEventListener("focusout", play, false);
 
-  slideshowEl.addEventListener("touchstart", () => {
-    isTouching = true;
-    flickity.stopPlayer();
-  });
+  slideshowEl.addEventListener(
+    "touchstart",
+    (e) => {
+      e.preventDefault();
 
-  slideshowEl.addEventListener("touchend", () => {
-    isTouching = false;
-    play();
-  });
+      isTouching = true;
+      flickity.stopPlayer();
+    },
+    { passive: false }
+  );
+
+  slideshowEl.addEventListener(
+    "touchend",
+    (e) => {
+      e.preventDefault();
+
+      isTouching = false;
+      play();
+    },
+    { passive: false }
+  );
 
   const updateAutoplay = () => {
     if (!isScrolling && !isTouching && isPaused) {
@@ -801,7 +825,7 @@ function carousel2() {
 carousel2();
 
 function carousel3() {
-  let tickerSpeed = 0.2;
+  let tickerSpeed = 0.5;
 
   let flickity = null;
   let isPaused = false;
@@ -848,15 +872,27 @@ function carousel3() {
   slideshowEl.addEventListener("mouseleave", play, false);
   slideshowEl.addEventListener("focusout", play, false);
 
-  slideshowEl.addEventListener("touchstart", () => {
-    isTouching = true;
-    flickity.stopPlayer();
-  });
+  slideshowEl.addEventListener(
+    "touchstart",
+    (e) => {
+      e.preventDefault();
 
-  slideshowEl.addEventListener("touchend", () => {
-    isTouching = false;
-    play();
-  });
+      isTouching = true;
+      flickity.stopPlayer();
+    },
+    { passive: false }
+  );
+
+  slideshowEl.addEventListener(
+    "touchend",
+    (e) => {
+      e.preventDefault();
+
+      isTouching = false;
+      play();
+    },
+    { passive: false }
+  );
 
   const updateAutoplay = () => {
     if (!isScrolling && !isTouching && isPaused) {
