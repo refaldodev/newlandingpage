@@ -279,14 +279,17 @@ document.addEventListener("DOMContentLoaded", function () {
 }); */
 
 function carousel1() {
-  let tickerSpeed = 0.2;
+  // Play with this value to change the speed
+  let tickerSpeed = 2;
+
   let flickity = null;
   let isPaused = false;
-  let isTouching = false;
-  let isScrolling = false;
-  let scrollTimeoutID = null; // Menyimpan ID timeout untuk pengguliran
-
   const slideshowEl = document.querySelector(".carousel-influencer1");
+
+  //
+  //   Functions
+  //
+  //////////////////////////////////////////////////////////////////////
 
   const update = () => {
     if (isPaused) return;
@@ -299,6 +302,10 @@ function carousel1() {
     window.requestAnimationFrame(update);
   };
 
+  const pause = () => {
+    isPaused = true;
+  };
+
   const play = () => {
     if (isPaused) {
       isPaused = false;
@@ -306,7 +313,11 @@ function carousel1() {
     }
   };
 
-  // Create Flickity
+  //
+  //   Create Flickity
+  //
+  //////////////////////////////////////////////////////////////////////
+
   flickity = new Flickity(slideshowEl, {
     autoPlay: false,
     prevNextButtons: true,
@@ -321,65 +332,44 @@ function carousel1() {
   });
   flickity.x = 0;
 
-  // Add Event Listeners
-  slideshowEl.addEventListener("mouseenter", play, false);
-  slideshowEl.addEventListener("focusin", play, false);
+  //
+  //   Add Event Listeners
+  //
+  //////////////////////////////////////////////////////////////////////
+
+  slideshowEl.addEventListener("mouseenter", pause, false);
+  slideshowEl.addEventListener("focusin", pause, false);
   slideshowEl.addEventListener("mouseleave", play, false);
   slideshowEl.addEventListener("focusout", play, false);
-
-  slideshowEl.addEventListener("touchstart", () => {
-    isTouching = true;
-    flickity.stopPlayer();
-  });
-
-  slideshowEl.addEventListener("touchend", () => {
-    isTouching = false;
-    updateAutoplay();
-  });
-
-  // Update autoplay jika tidak ada scrolling atau sentuhan
-  const updateAutoplay = () => {
-    if (!isScrolling && !isTouching && isPaused) {
-      isPaused = false;
-      window.requestAnimationFrame(update);
-    }
-  };
-
-  // Add event listeners for scroll pada window
-  window.addEventListener("scroll", () => {
-    isScrolling = true;
-    flickity.stopPlayer();
-    clearTimeout(scrollTimeoutID);
-  });
-
-  window.addEventListener("scroll", () => {
-    isScrolling = false;
-    scrollTimeoutID = setTimeout(() => {
-      if (!isTouching) {
-        updateAutoplay();
-      }
-    }, 500); // Sesuaikan timeout sesuai kebutuhan.
-  });
 
   flickity.on("dragStart", () => {
     isPaused = true;
   });
+
+  //
+  //   Start Ticker
+  //
+  //////////////////////////////////////////////////////////////////////
+
+  update();
 
   // Start Ticker
   update();
 }
 
 carousel1();
-
 function carousel2() {
-  let tickerSpeed = 0.2;
+  // Play with this value to change the speed
+  let tickerSpeed = 1;
+
   let flickity = null;
   let isPaused = false;
-  let isTouching = false;
-  let isScrolling = false;
-  let scrollTimeoutID = null; // Menyimpan ID timeout untuk pengguliran
-
   const slideshowEl = document.querySelector(".carousel-influencer2");
+
+  //
+  //   Functions
+  //
+  //////////////////////////////////////////////////////////////////////
 
   const update = () => {
     if (isPaused) return;
@@ -392,6 +382,10 @@ function carousel2() {
     window.requestAnimationFrame(update);
   };
 
+  const pause = () => {
+    isPaused = true;
+  };
+
   const play = () => {
     if (isPaused) {
       isPaused = false;
@@ -399,7 +393,11 @@ function carousel2() {
     }
   };
 
-  // Create Flickity
+  //
+  //   Create Flickity
+  //
+  //////////////////////////////////////////////////////////////////////
+
   flickity = new Flickity(slideshowEl, {
     autoPlay: false,
     prevNextButtons: true,
@@ -414,49 +412,26 @@ function carousel2() {
   });
   flickity.x = 0;
 
-  // Add Event Listeners
-  slideshowEl.addEventListener("mouseenter", play, false);
-  slideshowEl.addEventListener("focusin", play, false);
+  //
+  //   Add Event Listeners
+  //
+  //////////////////////////////////////////////////////////////////////
+
+  slideshowEl.addEventListener("mouseenter", pause, false);
+  slideshowEl.addEventListener("focusin", pause, false);
   slideshowEl.addEventListener("mouseleave", play, false);
   slideshowEl.addEventListener("focusout", play, false);
-
-  slideshowEl.addEventListener("touchstart", () => {
-    isTouching = true;
-    flickity.stopPlayer();
-  });
-
-  slideshowEl.addEventListener("touchend", () => {
-    isTouching = false;
-    updateAutoplay();
-  });
-
-  // Update autoplay jika tidak ada scrolling atau sentuhan
-  const updateAutoplay = () => {
-    if (!isScrolling && !isTouching && isPaused) {
-      isPaused = false;
-      window.requestAnimationFrame(update);
-    }
-  };
-
-  // Add event listeners for scroll pada window
-  window.addEventListener("scroll", () => {
-    isScrolling = true;
-    flickity.stopPlayer();
-    clearTimeout(scrollTimeoutID);
-  });
-
-  window.addEventListener("scroll", () => {
-    isScrolling = false;
-    scrollTimeoutID = setTimeout(() => {
-      if (!isTouching) {
-        updateAutoplay();
-      }
-    }, 500); // Sesuaikan timeout sesuai kebutuhan.
-  });
 
   flickity.on("dragStart", () => {
     isPaused = true;
   });
+
+  //
+  //   Start Ticker
+  //
+  //////////////////////////////////////////////////////////////////////
+
+  update();
 
   // Start Ticker
   update();
@@ -465,14 +440,17 @@ function carousel2() {
 carousel2();
 
 function carousel3() {
-  let tickerSpeed = 0.2;
+  // Play with this value to change the speed
+  let tickerSpeed = 0.5;
+
   let flickity = null;
   let isPaused = false;
-  let isTouching = false;
-  let isScrolling = false;
-  let scrollTimeoutID = null; // Menyimpan ID timeout untuk pengguliran
-
   const slideshowEl = document.querySelector(".carousel-influencer3");
+
+  //
+  //   Functions
+  //
+  //////////////////////////////////////////////////////////////////////
 
   const update = () => {
     if (isPaused) return;
@@ -485,6 +463,10 @@ function carousel3() {
     window.requestAnimationFrame(update);
   };
 
+  const pause = () => {
+    isPaused = true;
+  };
+
   const play = () => {
     if (isPaused) {
       isPaused = false;
@@ -492,7 +474,11 @@ function carousel3() {
     }
   };
 
-  // Create Flickity
+  //
+  //   Create Flickity
+  //
+  //////////////////////////////////////////////////////////////////////
+
   flickity = new Flickity(slideshowEl, {
     autoPlay: false,
     prevNextButtons: true,
@@ -507,49 +493,26 @@ function carousel3() {
   });
   flickity.x = 0;
 
-  // Add Event Listeners
-  slideshowEl.addEventListener("mouseenter", play, false);
-  slideshowEl.addEventListener("focusin", play, false);
+  //
+  //   Add Event Listeners
+  //
+  //////////////////////////////////////////////////////////////////////
+
+  slideshowEl.addEventListener("mouseenter", pause, false);
+  slideshowEl.addEventListener("focusin", pause, false);
   slideshowEl.addEventListener("mouseleave", play, false);
   slideshowEl.addEventListener("focusout", play, false);
-
-  slideshowEl.addEventListener("touchstart", () => {
-    isTouching = true;
-    flickity.stopPlayer();
-  });
-
-  slideshowEl.addEventListener("touchend", () => {
-    isTouching = false;
-    updateAutoplay();
-  });
-
-  // Update autoplay jika tidak ada scrolling atau sentuhan
-  const updateAutoplay = () => {
-    if (!isScrolling && !isTouching && isPaused) {
-      isPaused = false;
-      window.requestAnimationFrame(update);
-    }
-  };
-
-  // Add event listeners for scroll pada window
-  window.addEventListener("scroll", () => {
-    isScrolling = true;
-    flickity.stopPlayer();
-    clearTimeout(scrollTimeoutID);
-  });
-
-  window.addEventListener("scroll", () => {
-    isScrolling = false;
-    scrollTimeoutID = setTimeout(() => {
-      if (!isTouching) {
-        updateAutoplay();
-      }
-    }, 500); // Sesuaikan timeout sesuai kebutuhan.
-  });
 
   flickity.on("dragStart", () => {
     isPaused = true;
   });
+
+  //
+  //   Start Ticker
+  //
+  //////////////////////////////////////////////////////////////////////
+
+  update();
 
   // Start Ticker
   update();
