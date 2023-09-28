@@ -331,6 +331,11 @@ function carousel1() {
     prevNextButtons: false,
     pageDots: false,
     imagesLoaded: true,
+    resize: false,
+    // freeScroll: true,
+    // contain: true,
+    percentPosition: true,
+    setGallerySize: true,
   });
   flickity.x = 0;
 
@@ -447,6 +452,11 @@ function carousel2() {
     prevNextButtons: false,
     pageDots: false,
     imagesLoaded: true,
+    resize: false,
+    // freeScroll: true,
+    // contain: true,
+    percentPosition: true,
+    setGallerySize: true,
   });
   flickity.x = 0;
 
@@ -564,7 +574,12 @@ function carousel3() {
     friction: 0.25,
     prevNextButtons: false,
     pageDots: false,
+    resize: false,
     imagesLoaded: true,
+    // freeScroll: true,
+    // contain: true,
+    percentPosition: true,
+    setGallerySize: true,
   });
   flickity.x = 0;
 
