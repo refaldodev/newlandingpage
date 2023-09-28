@@ -279,7 +279,7 @@ document.addEventListener("DOMContentLoaded", function () {
 }); */
 
 function carousel1() {
-  let tickerSpeed = 0.1;
+  let tickerSpeed = 0.8;
 
   let flickity = null;
   let isPaused = false;
@@ -400,7 +400,7 @@ function carousel1() {
 carousel1();
 
 function carousel2() {
-  let tickerSpeed = 0.15;
+  let tickerSpeed = 0.4;
 
   let flickity = null;
   let isPaused = false;
@@ -523,7 +523,7 @@ function carousel2() {
 carousel2();
 
 function carousel3() {
-  let tickerSpeed = 0.1;
+  let tickerSpeed = 0.5;
 
   let flickity = null;
   let isPaused = false;
