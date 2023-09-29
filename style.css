@@ -275,7 +275,8 @@ nav.dropdown-toggle .menu {
   -moz-border-radius: 30px;
   -ms-border-radius: 30px;
   -o-border-radius: 30px;
-  padding: 12px 35px;
+  padding: 14px 27px;
+  min-height: 54px;
   font-weight: 800 !important;
   font-size: 1.16rem !important;
   margin-top: 20px;
@@ -653,7 +654,8 @@ img.img__size {
     -moz-border-radius: 30px;
     -ms-border-radius: 30px;
     -o-border-radius: 30px;
-    padding: 12px 35px;
+    padding: 14px 27px;
+    min-height: 54px;
     font-weight: 800 !important;
     font-size: 1.16rem !important;
   }
@@ -1226,7 +1228,7 @@ footer .text-footer a {
     /* inset: 0; */
     left: -20;
     bottom: 180px;
-    width: 40%;
+    width: 35%;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -1251,13 +1253,14 @@ footer .text-footer a {
     /* inset: 0; */
     right: 0;
     bottom: 180px;
-    width: 40%;
+    width: 35%;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
     z-index: -20;
   }
+
   .title-jumbotron {
     margin-top: 20px !important;
     /* background: linear-gradient(to right, #76cc11 30%, #0080ff 60%);
@@ -1769,7 +1772,8 @@ footer .text-footer a {
     -moz-border-radius: 30px;
     -ms-border-radius: 30px;
     -o-border-radius: 30px;
-    padding: 12px 35px;
+    padding: 14px 27px;
+    min-height: 54px;
     font-weight: 800 !important;
     font-size: 1.16rem !important;
   }
@@ -1821,6 +1825,7 @@ footer .text-footer a {
     -ms-word-break: break-all;
     word-break: break-all;
     word-break: break-word;
+    color: black;
   }
   .title-tribe,
   .title-shop,
