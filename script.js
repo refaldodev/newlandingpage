@@ -339,6 +339,17 @@ function carousel1() {
   });
   flickity.x = 0;
 
+  window.addEventListener("resize", function () {
+    // Mengaktifkan resize
+
+    flickity.resize();
+
+    // Menunggu 500ms sebelum mematikan resize kembali
+    clearTimeout(resizeTimeout);
+    var resizeTimeout = setTimeout(function () {
+      flickity.resize(false);
+    }, 100);
+  });
   //
   //   Add Event Listeners
   //
@@ -460,6 +471,17 @@ function carousel2() {
   });
   flickity.x = 0;
 
+  window.addEventListener("resize", function () {
+    // Mengaktifkan resize
+
+    flickity.resize();
+
+    // Menunggu 500ms sebelum mematikan resize kembali
+    clearTimeout(resizeTimeout);
+    var resizeTimeout = setTimeout(function () {
+      flickity.resize(false);
+    }, 100);
+  });
   //
   //   Add Event Listeners
   //
@@ -583,6 +605,17 @@ function carousel3() {
   });
   flickity.x = 0;
 
+  window.addEventListener("resize", function () {
+    // Mengaktifkan resize
+
+    flickity.resize();
+
+    // Menunggu 500ms sebelum mematikan resize kembali
+    clearTimeout(resizeTimeout);
+    var resizeTimeout = setTimeout(function () {
+      flickity.resize(false);
+    }, 100);
+  });
   //
   //   Add Event Listeners
   //
@@ -647,11 +680,4 @@ carousel3();
 window.addEventListener("resize", function () {
   // Inisialisasi ulang Flickity
   // flkty.resize();
-
-  var $carousel = $(".carousel-influence1").flickity();
-  var $carousel2 = $(".carousel-influencer2").flickity();
-  var $carousel3 = $(".carousel-influencer3").flickity();
-  carousel.resize();
-  carousel2.resize();
-  carousel3.resize();
 });
