@@ -643,9 +643,15 @@ function carousel3() {
 }
 carousel3();
 
-var $carousel = $(".carousel-influence1").flickity();
-var $carousel2 = $(".carousel-influencer2").flickity();
-var $carousel3 = $(".carousel-influencer3").flickity();
-carousel.resize();
-carousel2.resize();
-carousel3.resize();
+// Mendeteksi perubahan ukuran layar atau orientasi perangkat
+window.addEventListener("resize", function () {
+  // Inisialisasi ulang Flickity
+  // flkty.resize();
+
+  var $carousel = $(".carousel-influence1").flickity();
+  var $carousel2 = $(".carousel-influencer2").flickity();
+  var $carousel3 = $(".carousel-influencer3").flickity();
+  carousel.resize();
+  carousel2.resize();
+  carousel3.resize();
+});
