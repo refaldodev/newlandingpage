@@ -642,3 +642,10 @@ function carousel3() {
   update();
 }
 carousel3();
+
+var $carousel = $(".carousel-influence1").flickity();
+var $carousel2 = $(".carousel-influencer2").flickity();
+var $carousel3 = $(".carousel-influencer3").flickity();
+carousel.resize();
+carousel2.resize();
+carousel3.resize();
