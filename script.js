@@ -339,16 +339,16 @@ function carousel1() {
   });
   flickity.x = 0;
 
+  var resizeTimer;
   window.addEventListener("resize", function () {
-    // Mengaktifkan resize
-
+    // Aktifkan resize ketika terjadi perubahan ukuran layar
     flickity.resize();
 
-    // // Menunggu 500ms sebelum mematikan resize kembali
-    // clearTimeout(resizeTimeout);
-    // var resizeTimeout = setTimeout(function () {
-    //   flickity.resize(false);
-    // }, 100);
+    // Nonaktifkan resize setelah menunggu 500ms
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function () {
+      flickity.resize(false);
+    }, 500);
   });
   //
   //   Add Event Listeners
@@ -471,16 +471,16 @@ function carousel2() {
   });
   flickity.x = 0;
 
+  var resizeTimer;
   window.addEventListener("resize", function () {
-    // Mengaktifkan resize
-
+    // Aktifkan resize ketika terjadi perubahan ukuran layar
     flickity.resize();
 
-    // Menunggu 500ms sebelum mematikan resize kembali
-    // clearTimeout(resizeTimeout);
-    // var resizeTimeout = setTimeout(function () {
-    //   flickity.resize(false);
-    // }, 100);
+    // Nonaktifkan resize setelah menunggu 500ms
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function () {
+      flickity.resize(false);
+    }, 500);
   });
   //
   //   Add Event Listeners
@@ -605,16 +605,16 @@ function carousel3() {
   });
   flickity.x = 0;
 
+  var resizeTimer;
   window.addEventListener("resize", function () {
-    // Mengaktifkan resize
-
+    // Aktifkan resize ketika terjadi perubahan ukuran layar
     flickity.resize();
 
-    // // Menunggu 500ms sebelum mematikan resize kembali
-    // clearTimeout(resizeTimeout);
-    // var resizeTimeout = setTimeout(function () {
-    //   flickity.resize(false);
-    // }, 100);
+    // Nonaktifkan resize setelah menunggu 500ms
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function () {
+      flickity.resize(false);
+    }, 500);
   });
   //
   //   Add Event Listeners
