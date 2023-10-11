@@ -344,11 +344,11 @@ function carousel1() {
 
     flickity.resize();
 
-    // Menunggu 500ms sebelum mematikan resize kembali
-    clearTimeout(resizeTimeout);
-    var resizeTimeout = setTimeout(function () {
-      flickity.resize(false);
-    }, 100);
+    // // Menunggu 500ms sebelum mematikan resize kembali
+    // clearTimeout(resizeTimeout);
+    // var resizeTimeout = setTimeout(function () {
+    //   flickity.resize(false);
+    // }, 100);
   });
   //
   //   Add Event Listeners
@@ -477,10 +477,10 @@ function carousel2() {
     flickity.resize();
 
     // Menunggu 500ms sebelum mematikan resize kembali
-    clearTimeout(resizeTimeout);
-    var resizeTimeout = setTimeout(function () {
-      flickity.resize(false);
-    }, 100);
+    // clearTimeout(resizeTimeout);
+    // var resizeTimeout = setTimeout(function () {
+    //   flickity.resize(false);
+    // }, 100);
   });
   //
   //   Add Event Listeners
@@ -610,11 +610,11 @@ function carousel3() {
 
     flickity.resize();
 
-    // Menunggu 500ms sebelum mematikan resize kembali
-    clearTimeout(resizeTimeout);
-    var resizeTimeout = setTimeout(function () {
-      flickity.resize(false);
-    }, 100);
+    // // Menunggu 500ms sebelum mematikan resize kembali
+    // clearTimeout(resizeTimeout);
+    // var resizeTimeout = setTimeout(function () {
+    //   flickity.resize(false);
+    // }, 100);
   });
   //
   //   Add Event Listeners
@@ -675,9 +675,3 @@ function carousel3() {
   update();
 }
 carousel3();
-
-// Mendeteksi perubahan ukuran layar atau orientasi perangkat
-window.addEventListener("resize", function () {
-  // Inisialisasi ulang Flickity
-  // flkty.resize();
-});
