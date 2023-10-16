@@ -278,700 +278,406 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 }); */
 
-// function carousel1() {
-//   let tickerSpeed = 0.8;
+function carousel1() {
+  let tickerSpeed = 0.8;
 
-//   let flickity = null;
-//   let isPaused = false;
-//   let isTouching = false; // Menyimpan status sentuhan
-//   let isScrolling = false;
+  let flickity = null;
+  let isPaused = false;
+  let isTouching = false; // Menyimpan status sentuhan
+  let isScrolling = false;
 
-//   const slideshowEl = document.querySelector(".carousel-influencer1");
+  const slideshowEl = document.querySelector(".carousel-influencer1");
 
-//   //
-//   //   Functions
-//   //
-//   //////////////////////////////////////////////////////////////////////
+  //
+  //   Functions
+  //
+  //////////////////////////////////////////////////////////////////////
 
-//   const update = () => {
-//     if (isPaused) return;
-//     if (flickity.slides) {
-//       flickity.x = (flickity.x - tickerSpeed) % flickity.slideableWidth;
-//       flickity.selectedIndex = flickity.dragEndRestingSelect();
-//       flickity.updateSelectedSlide();
-//       flickity.settle(flickity.x);
-//     }
-//     window.requestAnimationFrame(update);
-//   };
+  const update = () => {
+    if (isPaused) return;
+    if (flickity.slides) {
+      flickity.x = (flickity.x - tickerSpeed) % flickity.slideableWidth;
+      flickity.selectedIndex = flickity.dragEndRestingSelect();
+      flickity.updateSelectedSlide();
+      flickity.settle(flickity.x);
+    }
+    window.requestAnimationFrame(update);
+  };
 
-//   const pause = () => {
-//     isPaused = true;
-//   };
+  const pause = () => {
+    isPaused = true;
+  };
 
-//   const play = () => {
-//     if (isPaused) {
-//       isPaused = false;
-//       window.requestAnimationFrame(update);
-//     }
-//   };
+  const play = () => {
+    if (isPaused) {
+      isPaused = false;
+      window.requestAnimationFrame(update);
+    }
+  };
 
-//   //
-//   //   Create Flickity
-//   //
-//   //////////////////////////////////////////////////////////////////////
+  //
+  //   Create Flickity
+  //
+  //////////////////////////////////////////////////////////////////////
 
-//   flickity = new Flickity(slideshowEl, {
-//     autoPlay: false,
-//     prevNextButtons: true,
-//     pageDots: false,
-//     draggable: true,
-//     wrapAround: true,
-//     selectedAttraction: 0.015,
-//     friction: 0.25,
-//     prevNextButtons: false,
-//     pageDots: false,
-//     imagesLoaded: true,
-//     resize: false,
-//     // freeScroll: true,
-//     // contain: true,
-//     percentPosition: true,
-//     setGallerySize: true,
-//   });
-//   flickity.x = 0;
+  flickity = new Flickity(slideshowEl, {
+    autoPlay: false,
+    prevNextButtons: true,
+    pageDots: false,
+    draggable: true,
+    wrapAround: true,
+    selectedAttraction: 0.015,
+    friction: 0.25,
+    prevNextButtons: false,
+    pageDots: false,
+    imagesLoaded: true,
+    resize: false,
+    // freeScroll: true,
+    // contain: true,
+    percentPosition: true,
+    setGallerySize: true,
+  });
+  flickity.x = 0;
 
-//   window.addEventListener("resize", function () {
-//     // Mengaktifkan resize
+  // window.addEventListener("resize", function () {
+  //   // Mengaktifkan resize
 
-//     flickity.resize();
+  //   flickity.resize();
 
-//     // Menunggu 500ms sebelum mematikan resize kembali
-//     clearTimeout(resizeTimeout);
-//     var resizeTimeout = setTimeout(function () {
-//       flickity.resize(false);
-//     }, 100);
-//   });
-//   //
-//   //   Add Event Listeners
-//   //
-//   //////////////////////////////////////////////////////////////////////
+  //   // Menunggu 500ms sebelum mematikan resize kembali
+  //   clearTimeout(resizeTimeout);
+  //   var resizeTimeout = setTimeout(function () {
+  //     flickity.resize(false);
+  //   }, 100);
+  // });
+  //
+  //   Add Event Listeners
+  //
+  //////////////////////////////////////////////////////////////////////
 
-//   slideshowEl.addEventListener("mouseenter", play, false);
-//   slideshowEl.addEventListener("focusin", play, false);
-//   slideshowEl.addEventListener("mouseleave", play, false);
-//   slideshowEl.addEventListener("focusout", play, false);
-//   // Tambahkan event listener untuk menyentuh (touch) pada elemen carousel
-//   slideshowEl.addEventListener("touchstart", () => {
-//     isTouching = true;
-//     // Hentikan autoplay saat pengguna mulai menyentuh
-//     flickity.stopPlayer();
-//   });
+  slideshowEl.addEventListener("mouseenter", play, false);
+  slideshowEl.addEventListener("focusin", play, false);
+  slideshowEl.addEventListener("mouseleave", play, false);
+  slideshowEl.addEventListener("focusout", play, false);
+  // Tambahkan event listener untuk menyentuh (touch) pada elemen carousel
+  slideshowEl.addEventListener("touchstart", () => {
+    isTouching = true;
+    // Hentikan autoplay saat pengguna mulai menyentuh
+    flickity.stopPlayer();
+  });
 
-//   slideshowEl.addEventListener("touchend", () => {
-//     isTouching = false;
-//     // Lanjutkan autoplay saat pengguna selesai menyentuh
-//     play();
-//   });
+  slideshowEl.addEventListener("touchend", () => {
+    isTouching = false;
+    // Lanjutkan autoplay saat pengguna selesai menyentuh
+    play();
+  });
 
-//   // ...
+  // ...
 
-//   // Update autoplay jika tidak ada scrolling atau sentuhan
-//   const updateAutoplay = () => {
-//     if (!isScrolling && !isTouching && isPaused) {
-//       isPaused = false;
-//       window.requestAnimationFrame(update);
-//     }
-//   };
-//   // Add event listeners for scroll and touch
-//   slideshowEl.addEventListener("scroll", function () {
-//     if (!isScrolling) {
-//       isScrolling = true;
-//       // Hentikan autoplay saat pengguna mulai menggulir
-//       flickity.stopPlayer();
-//     }
+  // Update autoplay jika tidak ada scrolling atau sentuhan
+  const updateAutoplay = () => {
+    if (!isScrolling && !isTouching && isPaused) {
+      isPaused = false;
+      window.requestAnimationFrame(update);
+    }
+  };
+  // Add event listeners for scroll and touch
+  slideshowEl.addEventListener("scroll", function () {
+    if (!isScrolling) {
+      isScrolling = true;
+      // Hentikan autoplay saat pengguna mulai menggulir
+      flickity.stopPlayer();
+    }
 
-//     clearTimeout(scrollTimeout);
-//     var scrollTimeout = setTimeout(function () {
-//       isScrolling = false;
-//       // Lanjutkan autoplay saat pengguna selesai menggulir
-//       updateAutoplay();
-//     }, 250); // Sesuaikan timeout sesuai kebutuhan.
-//   });
+    clearTimeout(scrollTimeout);
+    var scrollTimeout = setTimeout(function () {
+      isScrolling = false;
+      // Lanjutkan autoplay saat pengguna selesai menggulir
+      updateAutoplay();
+    }, 250); // Sesuaikan timeout sesuai kebutuhan.
+  });
 
-//   flickity.on("dragStart", () => {
-//     isPaused = true;
-//   });
+  flickity.on("dragStart", () => {
+    isPaused = true;
+  });
 
-//   //
-//   //   Start Ticker
-//   //
-//   //////////////////////////////////////////////////////////////////////
+  //
+  //   Start Ticker
+  //
+  //////////////////////////////////////////////////////////////////////
 
-//   update();
-// }
-// carousel1();
+  update();
+}
+carousel1();
 
-// function carousel2() {
-//   let tickerSpeed = 0.4;
+function carousel2() {
+  let tickerSpeed = 0.4;
 
-//   let flickity = null;
-//   let isPaused = false;
-//   let isTouching = false; // Menyimpan status sentuhan
-//   let isScrolling = false;
+  let flickity = null;
+  let isPaused = false;
+  let isTouching = false; // Menyimpan status sentuhan
+  let isScrolling = false;
 
-//   const slideshowEl = document.querySelector(".carousel-influencer2");
+  const slideshowEl = document.querySelector(".carousel-influencer2");
 
-//   //
-//   //   Functions
-//   //
-//   //////////////////////////////////////////////////////////////////////
+  //
+  //   Functions
+  //
+  //////////////////////////////////////////////////////////////////////
 
-//   const update = () => {
-//     if (isPaused) return;
-//     if (flickity.slides) {
-//       flickity.x = (flickity.x - tickerSpeed) % flickity.slideableWidth;
-//       flickity.selectedIndex = flickity.dragEndRestingSelect();
-//       flickity.updateSelectedSlide();
-//       flickity.settle(flickity.x);
-//     }
-//     window.requestAnimationFrame(update);
-//   };
+  const update = () => {
+    if (isPaused) return;
+    if (flickity.slides) {
+      flickity.x = (flickity.x - tickerSpeed) % flickity.slideableWidth;
+      flickity.selectedIndex = flickity.dragEndRestingSelect();
+      flickity.updateSelectedSlide();
+      flickity.settle(flickity.x);
+    }
+    window.requestAnimationFrame(update);
+  };
 
-//   const pause = () => {
-//     isPaused = true;
-//   };
+  const pause = () => {
+    isPaused = true;
+  };
 
-//   const play = () => {
-//     if (isPaused) {
-//       isPaused = false;
-//       window.requestAnimationFrame(update);
-//     }
-//   };
+  const play = () => {
+    if (isPaused) {
+      isPaused = false;
+      window.requestAnimationFrame(update);
+    }
+  };
 
-//   //
-//   //   Create Flickity
-//   //
-//   //////////////////////////////////////////////////////////////////////
+  //
+  //   Create Flickity
+  //
+  //////////////////////////////////////////////////////////////////////
 
-//   flickity = new Flickity(slideshowEl, {
-//     autoPlay: false,
-//     prevNextButtons: true,
-//     pageDots: false,
-//     draggable: true,
-//     wrapAround: true,
-//     selectedAttraction: 0.015,
-//     friction: 0.25,
-//     prevNextButtons: false,
-//     pageDots: false,
-//     imagesLoaded: true,
-//     resize: false,
-//     // freeScroll: true,
-//     // contain: true,
-//     percentPosition: true,
-//     setGallerySize: true,
-//   });
-//   flickity.x = 0;
+  flickity = new Flickity(slideshowEl, {
+    autoPlay: false,
+    prevNextButtons: true,
+    pageDots: false,
+    draggable: true,
+    wrapAround: true,
+    selectedAttraction: 0.015,
+    friction: 0.25,
+    prevNextButtons: false,
+    pageDots: false,
+    imagesLoaded: true,
+    resize: false,
+    // freeScroll: true,
+    // contain: true,
+    percentPosition: true,
+    setGallerySize: true,
+  });
+  flickity.x = 0;
 
-//   window.addEventListener("resize", function () {
-//     // Mengaktifkan resize
+  // window.addEventListener("resize", function () {
+  //   // Mengaktifkan resize
 
-//     flickity.resize();
+  //   flickity.resize();
 
-//     // Menunggu 500ms sebelum mematikan resize kembali
-//     clearTimeout(resizeTimeout);
-//     var resizeTimeout = setTimeout(function () {
-//       flickity.resize(false);
-//     }, 100);
-//   });
-//   //
-//   //   Add Event Listeners
-//   //
-//   //////////////////////////////////////////////////////////////////////
+  //   // Menunggu 500ms sebelum mematikan resize kembali
+  //   clearTimeout(resizeTimeout);
+  //   var resizeTimeout = setTimeout(function () {
+  //     flickity.resize(false);
+  //   }, 100);
+  // });
+  //
+  //   Add Event Listeners
+  //
+  //////////////////////////////////////////////////////////////////////
 
-//   slideshowEl.addEventListener("mouseenter", play, false);
-//   slideshowEl.addEventListener("focusin", play, false);
-//   slideshowEl.addEventListener("mouseleave", play, false);
-//   slideshowEl.addEventListener("focusout", play, false);
-//   // Tambahkan event listener untuk menyentuh (touch) pada elemen carousel
-//   slideshowEl.addEventListener("touchstart", () => {
-//     isTouching = true;
-//     // Hentikan autoplay saat pengguna mulai menyentuh
-//     /* flickity.stopPlayer(); */
-//     play();
-//   });
+  slideshowEl.addEventListener("mouseenter", play, false);
+  slideshowEl.addEventListener("focusin", play, false);
+  slideshowEl.addEventListener("mouseleave", play, false);
+  slideshowEl.addEventListener("focusout", play, false);
+  // Tambahkan event listener untuk menyentuh (touch) pada elemen carousel
+  slideshowEl.addEventListener("touchstart", () => {
+    isTouching = true;
+    // Hentikan autoplay saat pengguna mulai menyentuh
+    /* flickity.stopPlayer(); */
+    play();
+  });
 
-//   slideshowEl.addEventListener("touchend", () => {
-//     isTouching = false;
-//     // Lanjutkan autoplay saat pengguna selesai menyentuh
-//     play();
-//   });
+  slideshowEl.addEventListener("touchend", () => {
+    isTouching = false;
+    // Lanjutkan autoplay saat pengguna selesai menyentuh
+    play();
+  });
 
-//   // ...
+  // ...
 
-//   // Update autoplay jika tidak ada scrolling atau sentuhan
-//   const updateAutoplay = () => {
-//     if (!isScrolling && !isTouching && isPaused) {
-//       isPaused = false;
-//       window.requestAnimationFrame(update);
-//     }
-//   };
-//   // Add event listeners for scroll and touch
-//   slideshowEl.addEventListener("scroll", function () {
-//     if (!isScrolling) {
-//       isScrolling = true;
-//       // Hentikan autoplay saat pengguna mulai menggulir
-//       /* flickity.stopPlayer(); */
-//       play();
-//     }
+  // Update autoplay jika tidak ada scrolling atau sentuhan
+  const updateAutoplay = () => {
+    if (!isScrolling && !isTouching && isPaused) {
+      isPaused = false;
+      window.requestAnimationFrame(update);
+    }
+  };
+  // Add event listeners for scroll and touch
+  slideshowEl.addEventListener("scroll", function () {
+    if (!isScrolling) {
+      isScrolling = true;
+      // Hentikan autoplay saat pengguna mulai menggulir
+      /* flickity.stopPlayer(); */
+      play();
+    }
 
-//     clearTimeout(scrollTimeout);
-//     var scrollTimeout = setTimeout(function () {
-//       isScrolling = false;
-//       // Lanjutkan autoplay saat pengguna selesai menggulir
-//       updateAutoplay();
-//     }, 0); // Sesuaikan timeout sesuai kebutuhan.
-//   });
+    clearTimeout(scrollTimeout);
+    var scrollTimeout = setTimeout(function () {
+      isScrolling = false;
+      // Lanjutkan autoplay saat pengguna selesai menggulir
+      updateAutoplay();
+    }, 0); // Sesuaikan timeout sesuai kebutuhan.
+  });
 
-//   flickity.on("dragStart", () => {
-//     isPaused = true;
-//   });
+  flickity.on("dragStart", () => {
+    isPaused = true;
+  });
 
-//   //
-//   //   Start Ticker
-//   //
-//   //////////////////////////////////////////////////////////////////////
+  //
+  //   Start Ticker
+  //
+  //////////////////////////////////////////////////////////////////////
 
-//   update();
-// }
-// carousel2();
+  update();
+}
+carousel2();
 
-// function carousel3() {
-//   let tickerSpeed = 0.5;
+function carousel3() {
+  let tickerSpeed = 0.5;
 
-//   let flickity = null;
-//   let isPaused = false;
-//   let isTouching = false; // Menyimpan status sentuhan
-//   let isScrolling = false;
+  let flickity = null;
+  let isPaused = false;
+  let isTouching = false; // Menyimpan status sentuhan
+  let isScrolling = false;
 
-//   const slideshowEl = document.querySelector(".carousel-influencer3");
+  const slideshowEl = document.querySelector(".carousel-influencer3");
 
-//   //
-//   //   Functions
-//   //
-//   //////////////////////////////////////////////////////////////////////
+  //
+  //   Functions
+  //
+  //////////////////////////////////////////////////////////////////////
 
-//   const update = () => {
-//     if (isPaused) return;
-//     if (flickity.slides) {
-//       flickity.x = (flickity.x - tickerSpeed) % flickity.slideableWidth;
-//       flickity.selectedIndex = flickity.dragEndRestingSelect();
-//       flickity.updateSelectedSlide();
-//       flickity.settle(flickity.x);
-//     }
-//     window.requestAnimationFrame(update);
-//   };
+  const update = () => {
+    if (isPaused) return;
+    if (flickity.slides) {
+      flickity.x = (flickity.x - tickerSpeed) % flickity.slideableWidth;
+      flickity.selectedIndex = flickity.dragEndRestingSelect();
+      flickity.updateSelectedSlide();
+      flickity.settle(flickity.x);
+    }
+    window.requestAnimationFrame(update);
+  };
 
-//   const pause = () => {
-//     isPaused = true;
-//   };
+  const pause = () => {
+    isPaused = true;
+  };
 
-//   const play = () => {
-//     if (isPaused) {
-//       isPaused = false;
-//       window.requestAnimationFrame(update);
-//     }
-//   };
+  const play = () => {
+    if (isPaused) {
+      isPaused = false;
+      window.requestAnimationFrame(update);
+    }
+  };
 
-//   //
-//   //   Create Flickity
-//   //
-//   //////////////////////////////////////////////////////////////////////
+  //
+  //   Create Flickity
+  //
+  //////////////////////////////////////////////////////////////////////
 
-//   flickity = new Flickity(slideshowEl, {
-//     autoPlay: false,
-//     prevNextButtons: true,
-//     pageDots: false,
-//     draggable: true,
-//     wrapAround: true,
-//     selectedAttraction: 0.015,
-//     friction: 0.25,
-//     prevNextButtons: false,
-//     pageDots: false,
-//     resize: false,
-//     imagesLoaded: true,
-//     // freeScroll: true,
-//     // contain: true,
-//     percentPosition: true,
-//     setGallerySize: true,
-//   });
-//   flickity.x = 0;
+  flickity = new Flickity(slideshowEl, {
+    autoPlay: false,
+    prevNextButtons: true,
+    pageDots: false,
+    draggable: true,
+    wrapAround: true,
+    selectedAttraction: 0.015,
+    friction: 0.25,
+    prevNextButtons: false,
+    pageDots: false,
+    resize: false,
+    imagesLoaded: true,
+    // freeScroll: true,
+    // contain: true,
+    percentPosition: true,
+    setGallerySize: true,
+  });
+  flickity.x = 0;
 
-//   //   Add Event Listeners
-//   //
-//   //////////////////////////////////////////////////////////////////////
+  // window.addEventListener("resize", function () {
+  //   // Mengaktifkan resize
 
-//   slideshowEl.addEventListener("mouseenter", play, false);
-//   slideshowEl.addEventListener("focusin", play, false);
-//   slideshowEl.addEventListener("mouseleave", play, false);
-//   slideshowEl.addEventListener("focusout", play, false);
-//   // Tambahkan event listener untuk menyentuh (touch) pada elemen carousel
-//   slideshowEl.addEventListener("touchstart", () => {
-//     isTouching = true;
-//     // Hentikan autoplay saat pengguna mulai menyentuh
-//     flickity.stopPlayer();
-//   });
+  //   flickity.resize();
 
-//   slideshowEl.addEventListener("touchend", () => {
-//     isTouching = false;
-//     // Lanjutkan autoplay saat pengguna selesai menyentuh
-//     play();
-//   });
+  //   // Menunggu 500ms sebelum mematikan resize kembali
+  //   clearTimeout(resizeTimeout);
+  //   var resizeTimeout = setTimeout(function () {
+  //     flickity.resize(false);
+  //   }, 100);
+  // });
+  //
+  //   Add Event Listeners
+  //
+  //////////////////////////////////////////////////////////////////////
 
-//   // ...
+  slideshowEl.addEventListener("mouseenter", play, false);
+  slideshowEl.addEventListener("focusin", play, false);
+  slideshowEl.addEventListener("mouseleave", play, false);
+  slideshowEl.addEventListener("focusout", play, false);
+  // Tambahkan event listener untuk menyentuh (touch) pada elemen carousel
+  slideshowEl.addEventListener("touchstart", () => {
+    isTouching = true;
+    // Hentikan autoplay saat pengguna mulai menyentuh
+    flickity.stopPlayer();
+  });
 
-//   // Update autoplay jika tidak ada scrolling atau sentuhan
-//   const updateAutoplay = () => {
-//     if (!isScrolling && !isTouching && isPaused) {
-//       isPaused = false;
-//       window.requestAnimationFrame(update);
-//     }
-//   };
-//   // Add event listeners for scroll and touch
-//   slideshowEl.addEventListener("scroll", function () {
-//     if (!isScrolling) {
-//       isScrolling = true;
-//       // Hentikan autoplay saat pengguna mulai menggulir
-//       flickity.stopPlayer();
-//     }
+  slideshowEl.addEventListener("touchend", () => {
+    isTouching = false;
+    // Lanjutkan autoplay saat pengguna selesai menyentuh
+    play();
+  });
 
-//     clearTimeout(scrollTimeout);
-//     var scrollTimeout = setTimeout(function () {
-//       isScrolling = false;
-//       // Lanjutkan autoplay saat pengguna selesai menggulir
-//       updateAutoplay();
-//     }, 250); // Sesuaikan timeout sesuai kebutuhan.
-//   });
+  // ...
 
-//   flickity.on("dragStart", () => {
-//     isPaused = true;
-//   });
+  // Update autoplay jika tidak ada scrolling atau sentuhan
+  const updateAutoplay = () => {
+    if (!isScrolling && !isTouching && isPaused) {
+      isPaused = false;
+      window.requestAnimationFrame(update);
+    }
+  };
+  // Add event listeners for scroll and touch
+  slideshowEl.addEventListener("scroll", function () {
+    if (!isScrolling) {
+      isScrolling = true;
+      // Hentikan autoplay saat pengguna mulai menggulir
+      flickity.stopPlayer();
+    }
 
-//   //
-//   //   Start Ticker
-//   //
-//   //////////////////////////////////////////////////////////////////////
+    clearTimeout(scrollTimeout);
+    var scrollTimeout = setTimeout(function () {
+      isScrolling = false;
+      // Lanjutkan autoplay saat pengguna selesai menggulir
+      updateAutoplay();
+    }, 250); // Sesuaikan timeout sesuai kebutuhan.
+  });
 
-//   update();
-// }
-// carousel3();
+  flickity.on("dragStart", () => {
+    isPaused = true;
+  });
+
+  //
+  //   Start Ticker
+  //
+  //////////////////////////////////////////////////////////////////////
+
+  update();
+}
+carousel3();
 
 // // Mendeteksi perubahan ukuran layar atau orientasi perangkat
 // window.addEventListener("resize", function () {
 //   // Inisialisasi ulang Flickity
 //   // flkty.resize();
 // });
-
-// window.addEventListener("resize", function () {
-//   // Mengaktifkan resize
-
-//   flickity.resize();
-
-//   // Menunggu 500ms sebelum mematikan resize kembali
-//   clearTimeout(resizeTimeout);
-//   var resizeTimeout = setTimeout(function () {
-//     flickity.resize(false);
-//   }, 100);
-// });
-//
-function carousel1() {
-  let tickerSpeed = 0.5;
-  let flickity = null;
-  let isPaused = false;
-  let isTouching = false;
-  let isScrolling = false;
-  let resizeTimer = null; // Menyimpan timer untuk resize
-
-  const slideshowEl = document.querySelector(".carousel-influencer1");
-
-  const update = () => {
-    if (isPaused) return;
-    if (flickity.slides) {
-      flickity.x = (flickity.x - tickerSpeed) % flickity.slideableWidth;
-      flickity.selectedIndex = flickity.dragEndRestingSelect();
-      flickity.updateSelectedSlide();
-      flickity.settle(flickity.x);
-    }
-    window.requestAnimationFrame(update);
-  };
-
-  const enableResize = () => {
-    flickity.resize(); // Mengaktifkan resize Flickity
-  };
-
-  const disableResize = () => {
-    flickity.resize(false); // Menonaktifkan resize Flickity
-  };
-
-  const handleResize = () => {
-    enableResize(); // Aktifkan resize saat layar berubah ukuran
-    clearTimeout(resizeTimer);
-
-    // Setelah 2 detik, nonaktifkan kembali resize
-    resizeTimer = setTimeout(() => {
-      disableResize();
-    }, 2000); // Sesuaikan waktu nonaktifkan resize sesuai kebutuhan
-  };
-
-  flickity = new Flickity(slideshowEl, {
-    autoPlay: false,
-    prevNextButtons: true,
-    pageDots: false,
-    draggable: true,
-    wrapAround: true,
-    selectedAttraction: 0.015,
-    friction: 0.25,
-    resize: false,
-    imagesLoaded: true,
-    percentPosition: true,
-    setGallerySize: true,
-  });
-  flickity.x = 0;
-
-  slideshowEl.addEventListener(
-    "mouseenter",
-    () => {
-      isTouching = false;
-      play();
-    },
-    false
-  );
-
-  slideshowEl.addEventListener("touchstart", () => {
-    isTouching = true;
-    flickity.stopPlayer();
-  });
-
-  slideshowEl.addEventListener("touchend", () => {
-    isTouching = false;
-    play();
-  });
-
-  slideshowEl.addEventListener("scroll", function () {
-    if (!isScrolling) {
-      isScrolling = true;
-      flickity.stopPlayer();
-    }
-
-    clearTimeout(resizeTimer);
-    var scrollTimeout = setTimeout(function () {
-      isScrolling = false;
-      handleResize(); // Mengaktifkan resize setelah menggulir berhenti
-    }, 250);
-  });
-
-  flickity.on("dragStart", () => {
-    isPaused = true;
-  });
-
-  // Menambahkan event listener untuk perubahan ukuran jendela
-  window.addEventListener("resize", handleResize);
-
-  update();
-}
-
-carousel1();
-
-function carousel2() {
-  let tickerSpeed = 0.5;
-  let flickity = null;
-  let isPaused = false;
-  let isTouching = false;
-  let isScrolling = false;
-  let resizeTimer = null; // Menyimpan timer untuk resize
-
-  const slideshowEl = document.querySelector(".carousel-influencer2");
-
-  const update = () => {
-    if (isPaused) return;
-    if (flickity.slides) {
-      flickity.x = (flickity.x - tickerSpeed) % flickity.slideableWidth;
-      flickity.selectedIndex = flickity.dragEndRestingSelect();
-      flickity.updateSelectedSlide();
-      flickity.settle(flickity.x);
-    }
-    window.requestAnimationFrame(update);
-  };
-
-  const enableResize = () => {
-    flickity.resize(); // Mengaktifkan resize Flickity
-  };
-
-  const disableResize = () => {
-    flickity.resize(false); // Menonaktifkan resize Flickity
-  };
-
-  const handleResize = () => {
-    enableResize(); // Aktifkan resize saat layar berubah ukuran
-    clearTimeout(resizeTimer);
-
-    // Setelah 2 detik, nonaktifkan kembali resize
-    resizeTimer = setTimeout(() => {
-      disableResize();
-    }, 2000); // Sesuaikan waktu nonaktifkan resize sesuai kebutuhan
-  };
-
-  flickity = new Flickity(slideshowEl, {
-    autoPlay: false,
-    prevNextButtons: true,
-    pageDots: false,
-    draggable: true,
-    wrapAround: true,
-    selectedAttraction: 0.015,
-    friction: 0.25,
-    resize: false,
-    imagesLoaded: true,
-    percentPosition: true,
-    setGallerySize: true,
-  });
-  flickity.x = 0;
-
-  slideshowEl.addEventListener(
-    "mouseenter",
-    () => {
-      isTouching = false;
-      play();
-    },
-    false
-  );
-
-  slideshowEl.addEventListener("touchstart", () => {
-    isTouching = true;
-    flickity.stopPlayer();
-  });
-
-  slideshowEl.addEventListener("touchend", () => {
-    isTouching = false;
-    play();
-  });
-
-  slideshowEl.addEventListener("scroll", function () {
-    if (!isScrolling) {
-      isScrolling = true;
-      flickity.stopPlayer();
-    }
-
-    clearTimeout(resizeTimer);
-    var scrollTimeout = setTimeout(function () {
-      isScrolling = false;
-      handleResize(); // Mengaktifkan resize setelah menggulir berhenti
-    }, 250);
-  });
-
-  flickity.on("dragStart", () => {
-    isPaused = true;
-  });
-
-  // Menambahkan event listener untuk perubahan ukuran jendela
-  window.addEventListener("resize", handleResize);
-
-  update();
-}
-
-carousel2();
-
-function carousel3() {
-  let tickerSpeed = 0.5;
-  let flickity = null;
-  let isPaused = false;
-  let isTouching = false;
-  let isScrolling = false;
-  let resizeTimer = null; // Menyimpan timer untuk resize
-
-  const slideshowEl = document.querySelector(".carousel-influencer3");
-
-  const update = () => {
-    if (isPaused) return;
-    if (flickity.slides) {
-      flickity.x = (flickity.x - tickerSpeed) % flickity.slideableWidth;
-      flickity.selectedIndex = flickity.dragEndRestingSelect();
-      flickity.updateSelectedSlide();
-      flickity.settle(flickity.x);
-    }
-    window.requestAnimationFrame(update);
-  };
-
-  const enableResize = () => {
-    flickity.resize(); // Mengaktifkan resize Flickity
-  };
-
-  const disableResize = () => {
-    flickity.resize(false); // Menonaktifkan resize Flickity
-  };
-
-  const handleResize = () => {
-    enableResize(); // Aktifkan resize saat layar berubah ukuran
-    clearTimeout(resizeTimer);
-
-    // Setelah 2 detik, nonaktifkan kembali resize
-    resizeTimer = setTimeout(() => {
-      disableResize();
-    }, 2000); // Sesuaikan waktu nonaktifkan resize sesuai kebutuhan
-  };
-
-  flickity = new Flickity(slideshowEl, {
-    autoPlay: false,
-    prevNextButtons: true,
-    pageDots: false,
-    draggable: true,
-    wrapAround: true,
-    selectedAttraction: 0.015,
-    friction: 0.25,
-    resize: false,
-    imagesLoaded: true,
-    percentPosition: true,
-    setGallerySize: true,
-  });
-  flickity.x = 0;
-
-  slideshowEl.addEventListener(
-    "mouseenter",
-    () => {
-      isTouching = false;
-      play();
-    },
-    false
-  );
-
-  slideshowEl.addEventListener("touchstart", () => {
-    isTouching = true;
-    flickity.stopPlayer();
-  });
-
-  slideshowEl.addEventListener("touchend", () => {
-    isTouching = false;
-    play();
-  });
-
-  slideshowEl.addEventListener("scroll", function () {
-    if (!isScrolling) {
-      isScrolling = true;
-      flickity.stopPlayer();
-    }
-
-    clearTimeout(resizeTimer);
-    var scrollTimeout = setTimeout(function () {
-      isScrolling = false;
-      handleResize(); // Mengaktifkan resize setelah menggulir berhenti
-    }, 250);
-  });
-
-  flickity.on("dragStart", () => {
-    isPaused = true;
-  });
-
-  // Menambahkan event listener untuk perubahan ukuran jendela
-  window.addEventListener("resize", handleResize);
-
-  update();
-}
-
-carousel3();
