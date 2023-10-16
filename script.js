@@ -749,11 +749,11 @@ function carousel1() {
       flickity.stopPlayer();
     }
 
-    clearTimeout(resizeTimer);
-    var scrollTimeout = setTimeout(function () {
-      isScrolling = false;
-      handleResize(); // Mengaktifkan resize setelah menggulir berhenti
-    }, 250);
+    // clearTimeout(resizeTimer);
+    // var scrollTimeout = setTimeout(function () {
+    //   isScrolling = false;
+    //   handleResize(); // Mengaktifkan resize setelah menggulir berhenti
+    // }, 250);
   });
 
   flickity.on("dragStart", () => {
@@ -849,11 +849,11 @@ function carousel2() {
       flickity.stopPlayer();
     }
 
-    clearTimeout(resizeTimer);
-    var scrollTimeout = setTimeout(function () {
-      isScrolling = false;
-      handleResize(); // Mengaktifkan resize setelah menggulir berhenti
-    }, 250);
+    // clearTimeout(resizeTimer);
+    // var scrollTimeout = setTimeout(function () {
+    //   isScrolling = false;
+    //   handleResize(); // Mengaktifkan resize setelah menggulir berhenti
+    // }, 250);
   });
 
   flickity.on("dragStart", () => {
@@ -950,11 +950,11 @@ function carousel3() {
       flickity.stopPlayer();
     }
 
-    clearTimeout(resizeTimer);
-    var scrollTimeout = setTimeout(function () {
-      isScrolling = false;
-      handleResize(); // Mengaktifkan resize setelah menggulir berhenti
-    }, 250);
+    // clearTimeout(resizeTimer);
+    // var scrollTimeout = setTimeout(function () {
+    //   isScrolling = false;
+    //   handleResize(); // Mengaktifkan resize setelah menggulir berhenti
+    // }, 250);
   });
 
   flickity.on("dragStart", () => {
