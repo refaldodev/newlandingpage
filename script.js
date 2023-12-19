@@ -1142,6 +1142,106 @@ $(document).ready(function () {
         <img src="./img/flags/001-bolivia.png" alt="" class="flag">
       </div>
     </div>
+    <div class="carousel-cell carousel-cell1 size-carousel">
+      <div>
+        <img src="./img/influencer/content-creator-platform-bangladesh.webp" alt="" class="img-influencer">
+        
+        <img src="./img/flags/bangladesh.png" alt="" class="flag">
+      </div>
+    </div>
+    <div class="carousel-cell carousel-cell1 size-carousel">
+      <div>
+        <img src="./img/influencer/content-creator-platform-thailand.webp" alt="" class="img-influencer">
+        
+        <img src="./img/flags/024-thailand.png" alt="" class="flag">
+      </div>
+    </div>
+    <div class="carousel-cell carousel-cell1 size-carousel">
+      <div>
+        <img src="./img/influencer/content-creator-platform-indonesia.webp" alt="" class="img-influencer">
+        
+        <img src="./img/flags/028-indonesia.png" alt="" class="flag">
+      </div>
+    </div>
+    <div class="carousel-cell carousel-cell1 size-carousel">
+      <div>
+        <img src="./img/influencer/content-creator-platform-philippines.webp" alt="" class="img-influencer">
+        
+        <img src="./img/flags/040-philippines.png" alt="" class="flag">
+      </div>
+    </div>
+    <div class="carousel-cell carousel-cell1 size-carousel">
+      <div>
+        <img src="./img/influencer/content-creator-platform-nigeria.webp" alt="" class="img-influencer">
+        
+        <img src="./img/flags/nigeria.png" alt="" class="flag">
+      </div>
+    </div>
+    <div class="carousel-cell carousel-cell1 size-carousel">
+      <div>
+        <img src="./img/influencer/content-creator-platform-brazil.webp" alt="" class="img-influencer">
+        
+        <img src="./img/flags/011-brazil.png" alt="" class="flag">
+      </div>
+    </div>
+    <div class="carousel-cell carousel-cell1 size-carousel">
+      <div>
+        <img src="./img/influencer/content-creator-platform-spain.webp" alt="" class="img-influencer">
+        
+        <img src="./img/flags/003-spain.png" alt="" class="flag">
+      </div>
+    </div>
+    <div class="carousel-cell carousel-cell1 size-carousel">
+      <div>
+        <img src="./img/influencer/content-creator-platform-singapore.webp" alt="" class="img-influencer">
+        
+        <img src="./img/flags/041-singapore.png" alt="" class="flag">
+      </div>
+    </div>
+   
+    <div class="carousel-cell carousel-cell1 size-carousel">
+      <div>
+        <img src="./img/influencer/content-creator-platform-mexico.webp" alt="" class="img-influencer">
+        
+        <img src="./img/flags/005-mexico.png" alt="" class="flag">
+      </div>
+    </div>
+    <div class="carousel-cell carousel-cell1 size-carousel">
+      <div>
+        <img src="./img/influencer/content-creator-platform-poland.webp" alt="" class="img-influencer">
+        
+        <img src="./img/flags/037-poland.png" alt="" class="flag">
+      </div>
+    </div>
+    <div class="carousel-cell carousel-cell1 size-carousel">
+      <div>
+        <img src="./img/influencer/content-creator-platform-australia.webp" alt="" class="img-influencer">
+        
+        <img src="./img/flags/006-australia.png" alt="" class="flag">
+      </div>
+    </div>
+
+    <div class="carousel-cell carousel-cell1 size-carousel">
+      <div>
+        <img src="./img/influencer/content-creator-platform-new-zealand.webp" alt="" class="img-influencer">
+        
+        <img src="./img/flags/023-new-zealand.png" alt="" class="flag">
+      </div>
+    </div>
+    <div class="carousel-cell size-carousel">
+      <div>
+        <img src="./img/influencer/content-creator-platform-costa-rica.webp" alt="" class="img-influencer">
+        
+        <img src="./img/flags/006-costa-rica.png" alt="" class="flag">
+      </div>
+    </div>
+    <div class="carousel-cell carousel-cell1 size-carousel">
+      <div>
+        <img src="./img/influencer/content-creator-platform-bolivia.webp" alt="" class="img-influencer">
+        
+        <img src="./img/flags/001-bolivia.png" alt="" class="flag">
+      </div>
+    </div>
    `;
 
     // Gunakan API Flickity untuk menambahkan elemen baru
@@ -1268,6 +1368,105 @@ $(document).ready(function () {
        <img src="./img/flags/004-czech-republic.png" alt="" class="flag">
      </div>
    </div>
+   <div class="carousel-cell size-carousel">
+   <div>
+     <img src="./img/influencer/content-creator-platform-china.webp" alt="" class="img-influencer">
+     
+     <img src="./img/flags/013-china.png" alt="" class="flag">
+   </div>
+ </div>
+ <div class="carousel-cell size-carousel">
+   <div>
+     <img src="./img/influencer/content-creator-platform-united-kingdom.webp" alt="" class="img-influencer">
+     
+     <img src="./img/flags/united-kingdom.png" alt="" class="flag">
+   </div>
+ </div>
+ <div class="carousel-cell size-carousel">
+   <div>
+     <img src="./img/influencer/content-creator-platform-japan.webp" alt="" class="img-influencer">
+     
+     <img src="./img/flags/017-japan.png" alt="" class="flag">
+   </div>
+ </div>
+ <div class="carousel-cell size-carousel">
+   <div>
+     <img src="./img/influencer/content-creator-platform-south-korea.webp" alt="" class="img-influencer">
+     
+     <img src="./img/flags/007-south-korea.png" alt="" class="flag">
+   </div>
+ </div>
+ <div class="carousel-cell size-carousel">
+   <div>
+     <img src="./img/influencer/content-creator-platform-india.webp" alt="" class="img-influencer">
+     
+     <img src="./img/flags/004-india.png" alt="" class="flag">
+   </div>
+ </div>
+ <div class="carousel-cell size-carousel">
+   <div>
+     <img src="./img/influencer/content-creator-platform-hong-kong.webp" alt="" class="img-influencer">
+     
+     <img src="./img/flags/hong-kong.png" alt="" class="flag">
+   </div>
+ </div>
+ <div class="carousel-cell size-carousel">
+   <div>
+     <img src="./img/influencer/content-creator-platform-united-states.webp" alt="" class="img-influencer">
+     
+     <img src="./img/flags/001-united-states.png" alt="" class="flag">
+   </div>
+ </div>
+ <div class="carousel-cell size-carousel">
+   <div>
+     <img src="./img/influencer/content-creator-platform-netherlands.webp" alt="" class="img-influencer">
+     
+     <img src="./img/flags/020-netherlands.png" alt="" class="flag">
+   </div>
+ </div>
+
+ <div class="carousel-cell size-carousel">
+   <div>
+     <img src="./img/influencer/content-creator-platform-italy.webp" alt="" class="img-influencer">
+     
+     <img src="./img/flags/019-italy.png" alt="" class="flag">
+   </div>
+ </div>
+ <div class="carousel-cell size-carousel">
+   <div>
+     <img src="./img/influencer/content-creator-platform-france.webp" alt="" class="img-influencer">
+     
+     <img src="./img/flags/002-france.png" alt="" class="flag">
+   </div>
+ </div>
+ <div class="carousel-cell size-carousel">
+   <div>
+     <img src="./img/influencer/content-creator-platform-egypt.webp" alt="" class="img-influencer">
+     
+     <img src="./img/flags/026-egypt.png" alt="" class="flag">
+   </div>
+ </div>
+ <div class="carousel-cell size-carousel">
+   <div>
+     <img src="./img/influencer/content-creator-platform-turkiye.webp" alt="" class="img-influencer">
+     
+     <img src="./img/flags/034-turkey.png" alt="" class="flag">
+   </div>
+ </div>
+ <div class="carousel-cell size-carousel">
+   <div>
+     <img src="./img/influencer/content-creator-platform-sweden.webp" alt="" class="img-influencer">
+     
+     <img src="./img/flags/002-sweden.png" alt="" class="flag">
+   </div>
+ </div>
+ <div class="carousel-cell size-carousel">
+   <div>
+     <img src="./img/influencer/content-creator-platform-czech-republic.webp" alt="" class="img-influencer">
+     
+     <img src="./img/flags/004-czech-republic.png" alt="" class="flag">
+   </div>
+ </div>
     `;
 
     // Gunakan API Flickity untuk menambahkan elemen baru
@@ -1296,6 +1495,104 @@ $(document).ready(function () {
   function addAdditionalItems3() {
     // Gantilah bagian ini dengan logika Anda untuk menambah elemen tambahan
     var additionalItems3 = `<div class="carousel-cell size-carousel">
+    <div>
+      <img src="./img/influencer/content-creator-platform-colombia.webp" alt="" class="img-influencer">
+      
+      <img src="./img/flags/018-colombia.png" alt="" class="flag">
+    </div>
+  </div>
+  <div class="carousel-cell size-carousel">
+    <div>
+      <img src="./img/influencer/content-creator-platform-taiwan.webp" alt="" class="img-influencer">
+      
+      <img src="./img/flags/taiwan.png" alt="" class="flag">
+    </div>
+  </div>
+  <div class="carousel-cell size-carousel">
+    <div>
+      <img src="./img/influencer/content-creator-platform-south-africa.webp" alt="" class="img-influencer">
+      
+      <img src="./img/flags/south-africa.png" alt="" class="flag">
+    </div>
+  </div>
+  <div class="carousel-cell size-carousel">
+    <div>
+      <img src="./img/influencer/content-creator-platform-malaysia.webp" alt="" class="img-influencer">
+      
+      <img src="./img/flags/malasya.png" alt="" class="flag">
+    </div>
+  </div>
+  <div class="carousel-cell size-carousel">
+    <div>
+      <img src="./img/influencer/content-creator-platform-canada.webp" alt="" class="img-influencer">
+      
+      <img src="./img/flags/015-canada.png" alt="" class="flag">
+    </div>
+  </div>
+   <div class="carousel-cell size-carousel">
+    <div>
+      <img src="./img/influencer/content-creator-platform-germany.webp" alt="" class="img-influencer">
+      
+      <img src="./img/flags/012-germany.png" alt="" class="flag">
+    </div>
+  </div>
+  <div class="carousel-cell size-carousel">
+    <div>
+      <img src="./img/influencer/content-creator-platform-vietnam.webp" alt="" class="img-influencer">
+      
+      <img src="./img/flags/022-vietnam.png" alt="" class="flag">
+    </div>
+  </div>
+  <div class="carousel-cell size-carousel">
+    <div>
+      <img src="./img/influencer/content-creator-platform-ecuador.webp" alt="" class="img-influencer">
+      
+      <img src="./img/flags/019-ecuador.png" alt="" class="flag">
+    </div>
+  </div>
+  <div class="carousel-cell size-carousel">
+    <div>
+      <img src="./img/influencer/content-creator-platform-peru.webp" alt="" class="img-influencer">
+      
+      <img src="./img/flags/peru.png" alt="" class="flag">
+    </div>
+  </div>
+  <div class="carousel-cell size-carousel">
+    <div>
+      <img src="./img/influencer/content-creator-platform-pakistan.webp" alt="" class="img-influencer">
+      
+      <img src="./img/flags/pakistan.png" alt="" class="flag">
+    </div>
+  </div>
+  <div class="carousel-cell size-carousel">
+    <div>
+      <img src="./img/influencer/content-creator-platform-chile.webp" alt="" class="img-influencer">
+      
+      <img src="./img/flags/014-chile.png" alt="" class="flag">
+    </div>
+  </div>
+  <div class="carousel-cell size-carousel">
+    <div>
+      <img src="./img/influencer/content-creator-platform-argentina.webp" alt="" class="img-influencer">
+      
+      <img src="./img/flags/008-argentina.png" alt="" class="flag">
+    </div>
+  </div>
+  <div class="carousel-cell size-carousel">
+    <div>
+      <img src="./img/influencer/content-creator-platform-portugal.webp" alt="" class="img-influencer">
+      
+      <img src="./img/flags/003-portugal.png" alt="" class="flag">
+    </div>
+  </div>
+  <div class="carousel-cell size-carousel">
+    <div>
+      <img src="./img/influencer/content-creator-platform-switzerland.webp" alt="" class="img-influencer">
+      
+      <img src="./img/flags/005-switzerland.png" alt="" class="flag">
+    </div>
+  </div>
+  <div class="carousel-cell size-carousel">
     <div>
       <img src="./img/influencer/content-creator-platform-colombia.webp" alt="" class="img-influencer">
       
